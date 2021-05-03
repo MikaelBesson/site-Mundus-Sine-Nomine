@@ -2,7 +2,7 @@
 ?>
 
 <!doctype html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,13 +17,15 @@
             <figure>
                 <img src="images/titre.png" width="100%" alt="">
             </figure>
-            
         </div>
-
+        <h1 class="ml2">La communauté francophone des jeux de survie</h1>
     </div>
 
     <div id="slide2">
         <div class="slide_inside">
+            <p>
+
+            </p>
             
         </div>
 
@@ -35,7 +37,8 @@
         </div>
 
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
 
