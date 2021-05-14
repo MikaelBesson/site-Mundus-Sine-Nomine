@@ -12,3 +12,4 @@
     <title><?= $title ?></title>
 </head>
 <body>
+    <div id="content">

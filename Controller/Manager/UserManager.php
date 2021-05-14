@@ -1,5 +1,5 @@
 <?php
-
+require_once $_SERVER['DOCUMENT_ROOT'] . 'Classes/verifInput.php';
 
 class UserManager {
 
@@ -15,7 +15,7 @@ class UserManager {
         $result = $req->execute();
         $data = $req->fetchAll();
         foreach($data as $data_user) {
-            $users[] = new user($data_user['id'], $data_user['name'], $data_user['password'], $data_user['email']);
+            $users[] = new user($data_user['id'], $data_user['name'], $data_user['password'], $data_user['email'], $data_user['role']);
         }
         return $users;
     }
@@ -26,14 +26,20 @@ class UserManager {
      */
     public function addUser(user $user) {
         $conn = new DB();
+        $verif = new verifInput($user);
+
+        $name = $verif->verifInput($_POST['name']);
+        $password = $verif->verifInput($_POST['password']);
+        $email = $verif->verifInput($_POST['email']);
+
         $req = $conn->connect()->prepare("INSERT INTO user(name, password, email)
                                                 VALUES (:name, :password, :email)");
-        $req->bindValue(':name', $user->getName());
-        $req->bindValue(':password', password_hash($user->getPassword(),PASSWORD_DEFAULT));
-        $req->bindValue(':email', $user->getEmail());
+        $req->bindValue(':name', $name);
+        $req->bindValue(':password', password_hash($password,PASSWORD_DEFAULT));
+        $req->bindValue(':email', $email);
 
         if($req->execute()) {
-            echo 'Utilisateur enregistrer avec succes !!';
+
         }
     }
 

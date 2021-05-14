@@ -17,3 +17,11 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
 });
+
+
+/*
+function messages() {
+    let message = document.getElementsByClassName('messageBot');
+    message.innerHTML = 'utilisateur ajoutez avec succes'
+}
+ */

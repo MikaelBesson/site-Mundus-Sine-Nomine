@@ -1,7 +1,7 @@
 
 
 <div class="formContain">
-    <form action="vers entity user" method="post">
+    <form action="/index.php?ctrl=formulaire" method="post">
         <h2>Formulaire d'inscription</h2>
         <div class="form">
             <div class="label">
@@ -22,7 +22,6 @@
                     "un message ici"
                 </div>
             </div>
-
         </div>
     </form>
 </div>

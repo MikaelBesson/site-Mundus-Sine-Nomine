@@ -1,9 +1,11 @@
 
 <div id="slide1">
     <div class="slide_inside">
-        <nav>
-            <a id="connect" href="/index.php?ctrl=formulaire"><i class="fas fa-user-plus"></i></a>
-        </nav>
+        <div id="header">
+            <nav>
+                <a id="connect" href="/index.php?ctrl=formulaire"><i class="fas fa-user-plus"></i></a>
+            </nav>
+        </div>
         <figure>
             <img src="/images/titre.png" width="100%" alt="">
         </figure>
@@ -56,5 +58,4 @@
     </div>
 
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-<script src="/assets/js/script.js"></script>
+
