@@ -1,7 +1,7 @@
 <?php
 
 
-class verifInput {
+class cleanInput {
     // nettoyage des inputs
     // cleaning of inputs
     /**

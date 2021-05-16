@@ -6,6 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/InscriptionController.php'
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Entity/user.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Manager/UserManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
 
 
 

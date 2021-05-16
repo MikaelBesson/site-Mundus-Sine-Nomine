@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . 'Classes/verifInput.php';
+
 
 class UserManager {
 
@@ -12,7 +12,7 @@ class UserManager {
         $conn = new DB();
         $users = [];
         $req = $conn->connect()->prepare("SELECT * FROM user");
-        $result = $req->execute();
+        $req->execute();
         $data = $req->fetchAll();
         foreach($data as $data_user) {
             $users[] = new user($data_user['id'], $data_user['name'], $data_user['password'], $data_user['email'], $data_user['role']);
@@ -26,19 +26,25 @@ class UserManager {
      */
     public function addUser(user $user) {
         $conn = new DB();
-        $verif = new verifInput($user);
+        $verif = new cleanInput();
 
+
+        $id = null;
         $name = $verif->verifInput($_POST['name']);
         $password = $verif->verifInput($_POST['password']);
         $email = $verif->verifInput($_POST['email']);
+        $role_fk = 2;
 
-        $req = $conn->connect()->prepare("INSERT INTO user(name, password, email)
-                                                VALUES (:name, :password, :email)");
+        $req = $conn->connect()->prepare("INSERT INTO user(id , name, password, email, role_fk)
+                                                VALUES (:id,:name, :password, :email, :role_fk)");
+        $req->bindValue('id', $id);
         $req->bindValue(':name', $name);
         $req->bindValue(':password', password_hash($password,PASSWORD_DEFAULT));
         $req->bindValue(':email', $email);
+        $req->bindValue('role_fk', $role_fk);
 
         if($req->execute()) {
+            echo 'utilisateur ajoutez avec succes';
 
         }
     }
