@@ -16,9 +16,13 @@ if(isset($_GET['ctrl'])) {
         case 'formulaire':
             (new InscriptionController())->displayFormulaire();
             break;
+        case 'acceuil':
+            (new HomeController())->displayHome();
+            break;
     }
 }
 else {
     (new HomeController())->displayHome();
 }
+
 

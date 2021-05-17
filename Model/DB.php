@@ -5,7 +5,7 @@ class DB {
     public string $server ='localhost';
     public string $user = 'root';
     public string $password = '';
-    public string $db = 'mundus';
+    public string $db = 'mundusinenomine';
 
 
     //__const et tab

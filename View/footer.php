@@ -2,6 +2,7 @@
 </div>
     <footer>
         <nav id="footer">
+            <p>&copy; Mundus Sine Nominé 2021</p>
 
         </nav>
     </footer>

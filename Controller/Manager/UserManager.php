@@ -1,5 +1,5 @@
 <?php
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Entity/user.php';
 
 class UserManager {
 
@@ -24,28 +24,30 @@ class UserManager {
      * for Add an new user
      * @param user $user
      */
-    public function addUser(user $user) {
+    public function addUser($data) {
         $conn = new DB();
         $verif = new cleanInput();
 
 
-        $id = null;
-        $name = $verif->verifInput($_POST['name']);
-        $password = $verif->verifInput($_POST['password']);
-        $email = $verif->verifInput($_POST['email']);
+
+        $name = $verif->verifInput($data['name']);
+        $password = $verif->verifInput($data['password']);
+        $email = $verif->verifInput($data['email']);
         $role_fk = 2;
 
-        $req = $conn->connect()->prepare("INSERT INTO user(id , name, password, email, role_fk)
-                                                VALUES (:id,:name, :password, :email, :role_fk)");
-        $req->bindValue('id', $id);
+        $req = $conn->connect()->prepare("INSERT INTO user(name, password, email, role_fk)
+                                                VALUES (:name, :password, :email, :role_fk)");
+
         $req->bindValue(':name', $name);
         $req->bindValue(':password', password_hash($password,PASSWORD_DEFAULT));
         $req->bindValue(':email', $email);
         $req->bindValue('role_fk', $role_fk);
 
         if($req->execute()) {
-            echo 'utilisateur ajoutez avec succes';
-
+            return "utilisateur ajoutez avec succes";
+        }
+        else{
+            return 'erreur lors de l\'enregistrement';
         }
     }
 

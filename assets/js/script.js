@@ -1,3 +1,8 @@
+
+
+/* animation du sous titre */
+/* animation of the subtitle */
+
 let textWrapper = document.querySelector('.ml2');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
@@ -19,9 +24,5 @@ anime.timeline({loop: true})
 });
 
 
-/*
-function messages() {
-    let message = document.getElementsByClassName('messageBot');
-    message.innerHTML = 'utilisateur ajoutez avec succes'
-}
- */
+
+

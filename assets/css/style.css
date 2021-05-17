@@ -14,20 +14,30 @@ body {
 
 /* Acceuil style css */
 
+header nav {
+    width: 100%;
+    display: flex;
+}
 
-.fas {
+#logDiscord {
     font-size: large;
     color: whitesmoke;
-    margin-left: 95%;
+    margin-left: 60%;
 }
+.fab {
+    color: #cbcbef;
+}
+
 #connect {
-    margin: 0 0 2%;
+    font-size: large;
+    color: whitesmoke;
+    margin-left: 20%;
 }
 
 #slide1, #slide2, #slide3 {
     width: 100%;
     height: 1000px;
-    padding-top:50px;
+    padding-top:30px;
     text-align: center;
 }
 
@@ -76,8 +86,8 @@ h1  {
 
 #slide3 .slide_inside {
     background-color: rgba(0, 0, 0, 0.5);
-    margin-top:50px;
     padding:50px;
+    box-shadow: inset 0 0 15px 5px rgba(236, 5, 5, 0.5);
 }
 
 .ml2 {
@@ -97,7 +107,7 @@ h1  {
     background-color:rgba(0, 0, 0, 0.5);
     color: whitesmoke;
     font-size: x-large;
-    margin: 60rem auto;
+    margin: 30rem auto;
 }
 
 h2  {
@@ -117,6 +127,32 @@ h2  {
     padding: 2rem ;
     font-size: large;
     color: whitesmoke;
+}
+
+/* presentation des serveur style css */
+
+h3 {
+    color: antiquewhite;
+    font-size: large;
+    font-style: oblique;
+}
+
+.serveur {
+    display: flex;
+    flex-wrap: wrap;
+    color: antiquewhite;
+    font-size: medium;
+    margin-top: 4rem;
+}
+
+.textInfo {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.text {
+    text-align: left;
+
 }
 
 /*  formulaires style css */
@@ -188,7 +224,12 @@ h2  {
 
 .messageBot {
     margin-top: 2rem;
+    font-size: medium;
     text-align: center;
+}
+
+.backAcceuil a{
+    color: yellow;
 }
 
 /* footer style css */
@@ -203,4 +244,11 @@ footer {
                 hsla(234, 82%, 50%, 1) 10%,
                 hsla(240, 91%, 21%, 1) 50%,
                 hsla(235, 100%, 2%, 1) 100%);
+}
+
+footer nav {
+    text-align: center;
+    font-size: medium;
+    color: antiquewhite;
+    padding-top: 2rem;
 }
