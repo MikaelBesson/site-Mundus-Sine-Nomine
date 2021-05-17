@@ -11,7 +11,7 @@
             <img src="/images/titre.png" width="100%" alt="">
         </figure>
     </div>
-    <h1 class="ml2">La communauté francophone des jeux de survie</h1>
+    <h1 class="ml2">La communauté francophone des jeux de survies</h1>
     <div class="intro">
         Ce site a pour vocation de réunir une communauté française autour des jeux de survies que nous aimons tant.<br>
         Il va faciliter les échanges / partages / découvertes ainsi que les parties entre ses membres,<br>
@@ -26,7 +26,7 @@
 <div id="slide2">
     <div class="slide_inside">
         <div class="presentation">
-            <h2>La Communauté Mundus Siné Nominé te salue</h2>
+            <h2>La Communauté Mundus Sine Nominé te salue</h2>
             <div class="art1">
                 <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequatur culpa doloremque
                     doloribus dolorum ducimus facilis porro quidem quo vel? Aperiam iste labore perferendis provident,
