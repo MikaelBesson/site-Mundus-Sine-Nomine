@@ -21,8 +21,9 @@ class UserManager {
     }
 
     /**
-     * for Add an new user
-     * @param user $user
+     * add a new user
+     * @param $data
+     * @return string
      */
     public function addUser($data) {
         $conn = new DB();
@@ -66,14 +67,16 @@ class UserManager {
         if($req->execute()){
             echo 'Utilisateur modifié avec succes !!';
         }
+        else{
+            echo "erreur pendant la modification";
+        }
     }
 
     /**
      * delette an user
      * @param $userId
      */
-    function deletteUser($userId)
-    {
+    function deletteUser($userId) {
         $conn = new DB();
         $req = $conn->connect()->prepare("DELETE FROM user WHERE id = :id");
         $req->bindValue(':id', $userId);
