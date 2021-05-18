@@ -141,10 +141,12 @@ h3 {
 /* server list slider css */
 
 .gamelist {
+    display: flex;
+    flex-direction: row;
     width: 80%;
     height: 10rem;
     margin: 2rem auto;
-    background-color: black;
+    background-color: gray;
     overflow: hidden;
 }
 
@@ -152,6 +154,19 @@ h3 {
     width: 20%;
     height: 10rem;
     border-radius: 10%;
+    animation-name: imgSlide;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes imgSlide {
+    from {
+        transform: translateX(500%);
+    }
+    to {
+        transform: translateX(-500%);
+    }
 }
 
 
