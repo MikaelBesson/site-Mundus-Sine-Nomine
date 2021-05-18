@@ -133,27 +133,31 @@ h2  {
 
 h3 {
     color: antiquewhite;
-    font-size: large;
+    font-size: x-large;
     font-style: oblique;
 }
 
-.serveur {
-    display: flex;
-    flex-wrap: wrap;
-    color: antiquewhite;
-    font-size: medium;
-    margin-top: 4rem;
+
+/* server list slider css */
+
+.gamelist {
+    width: 80%;
+    height: 10rem;
+    margin: 2rem auto;
+    background-color: black;
+    overflow: hidden;
 }
 
-.textInfo {
-    margin-left: 20px;
-    text-align: left;
+.gamelist img {
+    width: 20%;
+    height: 10rem;
+    border-radius: 10%;
 }
 
-.text {
-    text-align: left;
 
-}
+
+
+
 
 /*  formulaires style css */
 

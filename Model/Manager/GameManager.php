@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Entity/game.php';
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/game.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
 class GameManager {
 
 
@@ -15,7 +15,7 @@ class GameManager {
         $req->execute();
         $data = $req->fetchAll();
         foreach($data as $data_game) {
-            $game[] = new game($data_game['id'], $data_game['name'], $data_game['infogame_fk']);
+            $games[] = new game($data_game['id'], $data_game['name'], $data_game['infogame_fk']);
         }
         return $games;
     }

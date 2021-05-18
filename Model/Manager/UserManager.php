@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Entity/user.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/user.php';
 
 class UserManager {
 

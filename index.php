@@ -3,14 +3,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/Controller.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/HomeController.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/InscriptionController.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Entity/game.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Entity/infogame.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Manager/GameManager.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Manager/infoGameManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/game.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/infogame.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/GameManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/infoGameManager.php';
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Entity/user.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Manager/UserManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/user.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/GameController.php';
 
 
 
@@ -26,7 +27,11 @@ if(isset($_GET['ctrl'])) {
     }
 }
 else {
-    (new HomeController())->displayHome();
+   (new HomeController())->displayHome();
 }
+
+
+
+
 
 

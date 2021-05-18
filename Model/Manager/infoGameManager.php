@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Entity/infogame.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/infogame.php';
 
 class infoGameManager {
 
