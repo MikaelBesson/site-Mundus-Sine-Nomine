@@ -2,13 +2,11 @@
 <div id="slide1">
     <div class="slide_inside">
         <div id="header">
-            <nav>
                 <a id="logDiscord" href="https://discord.gg/xEVXaUE">Rejoint-Nous : <i class="fab fa-discord"></i></a>
                 <a id="connect" href="/index.php?ctrl=formulaire"><i class="fas fa-user-plus"></i></a>
-            </nav>
         </div>
         <figure>
-            <img src="/images/titre.png" width="100%" alt="">
+            <img src="/images/titre.png" width="100%" alt="Mundus Sine Nomimé">
         </figure>
     </div>
     <h1 class="ml2">La communauté francophone des jeux de survies</h1>
@@ -16,7 +14,6 @@
         Ce site a pour vocation de réunir une communauté française autour des jeux de survies que nous aimons tant.<br>
         Il va faciliter les échanges / partages / découvertes ainsi que les parties entre ses membres,<br>
         sur des serveurs de qualité mis à leur disposition.<br>
-
         Cet espace étant publique, vous serez amenés à y côtoyer des gens de tous horizons <br>dont les goûts
         / idées / avis seront potentiellement différents des vôtres. <br>Nous vous demandons donc de faire preuve
         de tolérance, de respect et de bienséance lors de vos interventions.
@@ -58,12 +55,15 @@
         <h3>Liste des serveurs disponible</h3>
         <div class="slider">
             <div class="slide-track">
-                <div class="slide"><img src="/images/days.jpg" alt="logo7days"></div>
-                <div class="slide"><img src="/images/ark.png" alt="logoArk"></div>
-                <div class="slide"><img src="/images/valheim.jpg" alt="logoValheim"></div>
-                <div class="slide"><img src="/images/last.png" alt="logoLast"></div>
-                <div class="slide"><img src="/images/work1.jpg" alt="logoWork"></div>
-                <div class="slide"><img src="/images/work2.jpg" alt="logoWork"></div>
+                <div class="slide1"><img src="/images/days.jpg" alt="logo7days"></div>
+                <div class="slide2"><img src="/images/ark.png" alt="logoArk"></div>
+                <div class="slide3"><img src="/images/valheim.jpg" alt="logoValheim"></div>
+                <div class="slide4"><img src="/images/last.png" alt="logoLast"></div>
+                <div class="slide5"><img src="/images/work1.jpg" alt="logoWork"></div>
+                <div class="slide6"><img src="/images/work2.jpg" alt="logoWork"></div>
+            </div>
+            <div class="infoserv">
+
             </div>
         </div>
     </div>
