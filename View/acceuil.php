@@ -56,16 +56,16 @@
 <div id="slide3">
     <div class="slide_inside">
         <h3>Liste des serveurs disponible</h3>
-        <div class="gamelist">
-            <img src="/images/days.jpg" alt="logo7days">
-            <img src="/images/ark.png" alt="logoArk">
-            <img src="/images/valheim.jpg" alt="logoValheim">
-            <img src="/images/last.png" alt="logoLast">
-            <img src="/images/work1.jpg" alt="logoWork">
-            <img src="/images/work2.jpg" alt="logoWork">
-
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide"><img src="/images/days.jpg" alt="logo7days"></div>
+                <div class="slide"><img src="/images/ark.png" alt="logoArk"></div>
+                <div class="slide"><img src="/images/valheim.jpg" alt="logoValheim"></div>
+                <div class="slide"><img src="/images/last.png" alt="logoLast"></div>
+                <div class="slide"><img src="/images/work1.jpg" alt="logoWork"></div>
+                <div class="slide"><img src="/images/work2.jpg" alt="logoWork"></div>
+            </div>
         </div>
-
     </div>
 </div>
 
