@@ -55,16 +55,24 @@
         <h3>Liste des serveurs disponible</h3>
         <div class="slider">
             <div class="slide-track">
-                <div class="slide1"><img src="/images/days.jpg" alt="logo7days"></div>
-                <div class="slide2"><img src="/images/ark.png" alt="logoArk"></div>
-                <div class="slide3"><img src="/images/valheim.jpg" alt="logoValheim"></div>
-                <div class="slide4"><img src="/images/last.png" alt="logoLast"></div>
-                <div class="slide5"><img src="/images/work1.jpg" alt="logoWork"></div>
-                <div class="slide6"><img src="/images/work2.jpg" alt="logoWork"></div>
+                <div><img src="/images/days.jpg" alt="logo7days"></div>
+                <div><img src="/images/ark.png" alt="logoArk"></div>
+                <div><img src="/images/valheim.jpg" alt="logoValheim"></div>
+                <div><img src="/images/last.png" alt="logoLast"></div>
+                <div><img src="/images/work1.jpg" alt="logoWork"></div>
+                <div><img src="/images/work2.jpg" alt="logoWork"></div>
             </div>
-            <div class="infoserv">
+        </div>
+        <nav id="serverlist">
+            <button class="title" id="game1">7days to die</button>
+            <button class="title" id="game2">Ark Survival</button>
+            <button class="title" id="game3">Valheim</button>
+            <button class="title" id="game4">Last Oasis</button>
+            <button class="title" id="game5">Work</button>
+            <button class="title" id="game6">Work</button>
+        </nav>
+        <div id="infoserv">
 
-            </div>
         </div>
     </div>
 </div>

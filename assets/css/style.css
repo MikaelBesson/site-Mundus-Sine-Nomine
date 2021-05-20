@@ -141,16 +141,45 @@ h3 {
     font-style: oblique;
 }
 
+#serverlist {
+    width: 100%;
+    font-size: large;
+    display: flex;
+    justify-content: space-around;
+}
+
+.title {
+    width: 9%;
+    height: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px yellow;
+    cursor: pointer;
+}
+.title:hover {
+    background-color:#f24437;
+}
+
+#infoserv {
+    width: 80%;
+    height: 10rem;
+    margin: 3rem auto;
+    font-size: xx-large;
+    color: whitesmoke;
+    text-align: left;
+    padding-left: 5%;
+}
+
 
 /* server list slider css */
 
 /* Animation */
+
 @keyframes scroll {
     0% {
         transform: translateX(150px);
     }
     50% {
-        transform: translateX(calc(-250px * 4)); /* (* 4 a changer suivant le nombre d'image dans le slide */
+        transform: translateX(calc(-250px *1)); /* (* 4 a changer suivant le nombre d'image dans le slide */
     }
     100% {
         transform: translateX(150px);
@@ -164,32 +193,13 @@ h3 {
        margin: 2rem auto;
        overflow:hidden;
        position: relative;
-       width: 90%;
+       width: 100%;
    }
 
-::before,
-::after {
-     content: "";
-     height: 100px;
-     position: absolute;
-     width: 200px;
-     z-index: 2;
- }
-
-::after {
-     right: 0;
-     top: 0;
-     transform: rotateZ(180deg);
- }
-
-::before {
-     left: 0;
-     top: 0;
- }
 
 .slide-track {
     animation: scroll linear infinite;
-    animation-duration: 20s;
+    animation-duration: 10s;
     display: flex;
     width: calc(250px * 14);
 }

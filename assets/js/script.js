@@ -26,6 +26,39 @@ anime.timeline({loop: true})
 
 /* event of serveur list */
 
+let viewInfo = document.getElementById('infoserv');
+let game1 = document.getElementById('game1');
+let game2 = document.getElementById('game2');
+let game3 = document.getElementById('game3');
+let game4 = document.getElementById('game4');
+let game5 = document.getElementById('game5');
+let game6 = document.getElementById('game6');
+
+
+game1.addEventListener('click', function() {
+    viewInfo.innerHTML = "7 days to die";
+});
+
+game2.addEventListener('click', function() {
+    viewInfo.innerHTML = "Ark Survival";
+});
+
+game3.addEventListener('click', function() {
+    viewInfo.innerHTML = "Valheim";
+});
+
+game4.addEventListener('click', function() {
+    viewInfo.innerHTML = "Last oasis";
+});
+
+game5.addEventListener('click', function() {
+    viewInfo.innerHTML = "Work 1";
+});
+
+game6.addEventListener('click', function() {
+    viewInfo.innerHTML = "Work 2";
+});
+
 
 
 
