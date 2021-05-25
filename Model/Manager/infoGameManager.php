@@ -10,8 +10,8 @@ class infoGameManager {
         $req->execute();
         $data = $req->fetchAll();
         foreach($data as $data_info) {
-            $infos[] = new infogame($data_info['id'], $data_info['title'], $data_info['dev'], $data_info['genre'],
-                        $data_info['content'], $data_info['serv_name'], $data_info['ip'], $data_info['password']);
+            $infos[] = new infogame($data_info['dev'], $data_info['genre'],
+                        $data_info['content'], $data_info['serv_name'], $data_info['ip'], $data_info['password'], $data_info['id']);
         }
         return $infos;
     }
@@ -26,7 +26,6 @@ class infoGameManager {
         $conn = new DB();
         $verif = new cleanInput();
 
-        $title = $verif->verifInput($data['title']);
         $dev = $verif->verifInput($data['dev']);
         $genre = $verif->verifInput($data['genre']);
         $content = $verif->verifInput($data['content']);
@@ -34,9 +33,9 @@ class infoGameManager {
         $ip = $verif->verifInput($data['ip']);
         $password = $verif->verifInput($data['password']);
 
-        $req = $conn->connect()->prepare("INSERT INTO infogame(title, dev, genre, content, serv_name, ip, password)
-                                                VALUES (:title, :dev, :genre, :content, :serv_name, :ip, :password)");
-        $req->bindValue('title', $title);
+        $req = $conn->connect()->prepare("INSERT INTO infogame(dev, genre, content, serv_name, ip, password)
+                                                VALUES (:dev, :genre, :content, :serv_name, :ip, :password)");
+
         $req->bindValue('dev', $dev);
         $req->bindValue('genre', $genre);
         $req->bindValue('content', $content);
@@ -59,9 +58,9 @@ class infoGameManager {
      */
     public function editInfo(infogame $infogame) {
         $conn = new DB();
-        $req = $conn->connect()->prepare("UPDATE infogame SET title = :title, dev = :dev, genre = :genre, content = :content,
+        $req = $conn->connect()->prepare("UPDATE infogame SET dev = :dev, genre = :genre, content = :content,
                                             serv_name = :serv_name, ip = :ip, password = :password");
-        $req->bindValue('title', $infogame->getTitle());
+
         $req->bindValue('dev', $infogame->getDev());
         $req->bindValue('genre', $infogame->getGenre());
         $req->bindValue('content', $infogame->getContent());

@@ -3,7 +3,6 @@
 
 class infogame {
     private ?int $id;
-    private string $title;
     private string $dev;
     private string $genre;
     private string $content;
@@ -12,9 +11,9 @@ class infogame {
     private string $password;
 
 
-    public function __construct(int $id = null, string $title, string $dev, string $genre, string $content, string $serv_name, int $ip, string $password){
+    public function __construct(string $dev, string $genre, string $content, string $serv_name, int $ip, string $password, int $id = null){
         $this->id = $id;
-        $this->title = $title;
+
         $this->dev = $dev;
         $this->genre = $genre;
         $this->content = $content;
@@ -39,21 +38,6 @@ class infogame {
         $this->id = $id;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param string $title
-     */
-    public function setTitle(string $title): void
-    {
-        $this->title = $title;
-    }
 
     /**
      * @return string

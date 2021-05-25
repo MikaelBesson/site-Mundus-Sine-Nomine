@@ -21,14 +21,22 @@ body {
 #logDiscord {
     font-size: large;
     color: whitesmoke;
+    margin-left: 40%;
 }
 .fab {
     color: #cbcbef;
 }
 
+#userconnect {
+    color: whitesmoke;
+    font-size: large;
+    margin-left: 15%;
+}
+
 #connect {
     font-size: large;
     color: whitesmoke;
+    margin-left: 5%;
 }
 
 #slide1, #slide2, #slide3 {
@@ -55,7 +63,7 @@ body {
 #slide3 {
     background: url(/images/img3.jpg) center 0 no-repeat fixed;
     background-size: cover;
-    height: 1000px;
+    height: 1200px;
     text-align: center;
 }
 
@@ -161,9 +169,9 @@ h3 {
 
 #infoserv {
     width: 80%;
-    height: 10rem;
+    min-height: 10rem;
     margin: 3rem auto;
-    font-size: xx-large;
+    font-size: x-large;
     color: whitesmoke;
     text-align: left;
     padding-left: 5%;
@@ -285,6 +293,37 @@ h3 {
 .backAcceuil a{
     color: yellow;
 }
+/* Admin style css */
+
+#adminBlock {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#imgLeft, #imgRight {
+    width: 20%;
+    border: 1px solid black;
+}
+#imgLeft {
+    background-image: url("/images/imgLeft.jpg");
+    background-size: cover;
+}
+#imgRight {
+    background-image: url("/images/imgRight.jpg");
+    background-size: cover;
+}
+
+#admin {
+    width: 45%;
+    border: 8px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    background-color: #d0cccc;
+    font-size: large;
+    padding: 2% 5%;
+}
+
 
 /* footer style css */
 

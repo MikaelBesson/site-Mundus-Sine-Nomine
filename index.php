@@ -7,6 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/game.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/infogame.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/GameManager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/infoGameManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/AdminController.php';
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/user.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
@@ -23,6 +24,9 @@ if(isset($_GET['ctrl'])) {
             break;
         case 'acceuil':
             (new HomeController())->displayHome();
+            break;
+        case 'admin':
+            (new AdminController())->displayAdmin();
             break;
     }
 }

@@ -3,6 +3,7 @@
     <div class="slide_inside">
         <div id="header">
                 <a id="logDiscord" href="https://discord.gg/xEVXaUE">Rejoint-Nous : <i class="fab fa-discord"></i></a>
+            <span id="userconnect">Bienvenue : user</span>
                 <a id="connect" href="/index.php?ctrl=formulaire"><i class="fas fa-user-plus"></i></a>
         </div>
         <figure>
@@ -25,26 +26,10 @@
         <div class="presentation">
             <h2>La Communauté Mundus Sine Nominé te salue</h2>
             <div class="art1">
-                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequatur culpa doloremque
-                    doloribus dolorum ducimus facilis porro quidem quo vel? Aperiam iste labore perferendis provident,
-                    quis quo ratione temporibus voluptatum!
-                </div>
-                <div>Accusamus accusantium aperiam atque dolor doloremque dolores eaque earum est eveniet expedita,
-                    impedit incidunt modi, molestias mollitia neque nesciunt nostrum omnis provident quo repellendus
-                    rerum voluptate voluptatem. Dignissimos, in, nisi.
-                </div>
-                <div>Aperiam corporis cum cumque, earum facere inventore laboriosam modi nesciunt quasi ratione
-                    recusandae sint totam unde vel vero voluptate voluptatum? Animi cupiditate delectus ea eveniet,
-                    maiores maxime nesciunt ut voluptate!
-                </div>
-                <div>A accusantium, aliquid, error ex facilis fuga laudantium nisi perspiciatis quas quidem quo, quos!
-                    Obcaecati officia, voluptates? Aliquid amet quibusdam reprehenderit rerum vitae? A illo ipsam
-                    laboriosam natus, quibusdam sequi.
-                </div>
-                <div>Culpa expedita fuga illum, molestias obcaecati quos reprehenderit temporibus! At consectetur
-                    cupiditate dolorem eveniet ex, facere iste maiores maxime molestiae omnis, praesentium provident
-                    quam, repellat repudiandae sit temporibus totam vero!
-                </div>
+                <span>
+                    Survivantes,Survivant toi qui est fan de jeux de survie, de build, de dépassement de soi tu est ici au bon endroit<br>
+                    La communauté Mundus Sine Nominé te propose des serveurs de qualité
+                </span>
             </div>
         </div>
     </div>
@@ -59,18 +44,18 @@
                 <div><img src="/images/ark.png" alt="logoArk"></div>
                 <div><img src="/images/valheim.jpg" alt="logoValheim"></div>
                 <div><img src="/images/last.png" alt="logoLast"></div>
-                <div><img src="/images/work1.jpg" alt="logoWork"></div>
-                <div><img src="/images/work2.jpg" alt="logoWork"></div>
+                <div><img src="/images/scum.jpg" alt="logoScum"></div>
+                <div><img src="/images/life.jpg" alt="logoLife"></div>
             </div>
         </div>
-        <nav id="serverlist">
-            <button class="title" id="game1">7days to die</button>
-            <button class="title" id="game2">Ark Survival</button>
-            <button class="title" id="game3">Valheim</button>
-            <button class="title" id="game4">Last Oasis</button>
-            <button class="title" id="game5">Work</button>
-            <button class="title" id="game6">Work</button>
-        </nav>
+         <nav id="serverlist">
+             <?php
+             foreach($vars as $data_game) {
+                 $games[] = new game($data_game['id'], $data_game['name'], $data_game['infogame_fk']);
+                 echo "<button class='title'>".$data_game["name"]."</button>";
+             } ?>
+         </nav>
+
         <div id="infoserv">
 
         </div>
