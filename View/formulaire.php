@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST, $_POST['name'], $_POST['password'], $_POST['email'])){
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/Manager/UserManager.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
     $manager = new UserManager();
     $message = $manager->addUser($_POST);
 }
