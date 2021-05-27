@@ -27,7 +27,7 @@
             <h2>La Communauté Mundus Sine Nominé te salue</h2>
             <div class="art1">
                 <span>
-                    Survivantes,Survivant toi qui est fan de jeux de survie, de build, de dépassement de soi tu est ici au bon endroit<br>
+                    Survivantes,Survivants toi qui est fan de jeux de survie, de build, de dépassement de soi tu est ici au bon endroit<br>
                     La communauté Mundus Sine Nominé te propose des serveurs de qualité
                 </span>
             </div>
@@ -53,12 +53,12 @@
              foreach($vars as $data_game) {
                  $games[] = new game($data_game['id'], $data_game['name'], $data_game['infogame_fk']);
                  echo "<button class='title'>".$data_game["name"]."</button>";
-             } ?>
+             }
+             ?>
          </nav>
 
-        <div id="infoserv">
-
-        </div>
+        <div id="infoserv"></div>
+        <div id="connectServ"></div>
     </div>
 </div>
 

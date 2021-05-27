@@ -163,6 +163,7 @@ h3 {
     box-shadow: 2px 2px 2px yellow;
     cursor: pointer;
 }
+
 .title:hover {
     background-color:#f24437;
 }
@@ -177,6 +178,18 @@ h3 {
     padding-left: 5%;
 }
 
+#connectServ {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 80%;
+    min-height: 10rem;
+    margin: 3rem auto;
+    font-size: x-large;
+    color: whitesmoke;
+    padding-left: 5%;
+}
+
 
 /* server list slider css */
 
@@ -187,7 +200,7 @@ h3 {
         transform: translateX(150px);
     }
     50% {
-        transform: translateX(calc(-250px *1)); /* (* 4 a changer suivant le nombre d'image dans le slide */
+        transform: translateX(calc(-250px *1)); /* (*0 a changer suivant le nombre d'image dans le slide */
     }
     100% {
         transform: translateX(150px);
