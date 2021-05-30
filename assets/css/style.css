@@ -39,6 +39,12 @@ body {
     margin-left: 5%;
 }
 
+#adminButton {
+    font-size: large;
+    color: whitesmoke;
+    margin-left: 5%;
+}
+
 #slide1, #slide2, #slide3 {
     width: 100%;
     padding-top:30px;

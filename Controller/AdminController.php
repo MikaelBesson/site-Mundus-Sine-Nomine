@@ -5,6 +5,4 @@ class AdminController extends Controller {
     public function displayAdmin() {
         $this->render('administration', 'administration');
     }
-
-
 }

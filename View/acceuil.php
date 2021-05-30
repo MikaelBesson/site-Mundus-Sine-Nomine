@@ -5,6 +5,7 @@
                 <a id="logDiscord" href="https://discord.gg/xEVXaUE">Rejoint-Nous : <i class="fab fa-discord"></i></a>
             <span id="userconnect">Bienvenue : user</span>
                 <a id="connect" href="/index.php?ctrl=formulaire"><i class="fas fa-user-plus"></i></a>
+                <a id="adminButton" href="/index.php?ctrl=admin&action=admin"><i class="fas fa-user-cog"></i></a>
         </div>
         <figure>
             <img src="/images/titre.png" width="100%" alt="Mundus Sine Nomimé">
@@ -37,7 +38,6 @@
                     ( qui aujourd'hui depasse la barre des 1200) Mundus propose plusieurs serveurs ouvert gratuitement a nos membres <br>
                     et la possibilité de louer un espace pour ceux qui voudrait une partie avec des regles plus personelle<br>
                     ( ajout de mods, partie en commité restreint, test de certains jeux etc...).<br><br>
-
                 </span>
             </div>
         </div>
