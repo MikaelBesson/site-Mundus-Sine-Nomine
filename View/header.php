@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -12,4 +10,4 @@
     <title><?= $title ?></title>
 </head>
 <body>
-    <div id="content">
+<div id="content">

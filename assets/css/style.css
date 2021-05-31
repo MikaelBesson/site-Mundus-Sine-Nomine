@@ -318,6 +318,10 @@ h3 {
 }
 /* Admin style css */
 
+a:hover {
+    color: #FF0000;
+}
+
 #adminBlock {
     width: 100%;
     display: flex;
@@ -345,6 +349,13 @@ h3 {
     background-color: #d0cccc;
     font-size: large;
     padding: 2% 5%;
+}
+
+#responseSql {
+    width: 50%;
+    margin: 2rem auto;
+    text-align: center;
+    color: #121512;
 }
 
 

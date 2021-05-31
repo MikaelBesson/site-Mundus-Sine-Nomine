@@ -8,19 +8,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/infogame.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/GameManager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/infoGameManager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/AdminController.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/AddGameController.php';
-
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/user.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/GameController.php';
 
 
-
-
-if(isset($_GET['ctrl'])) {
-    switch($_GET['ctrl']) {
+if (isset($_GET['ctrl'])) {
+    switch ($_GET['ctrl']) {
         case 'formulaire':
             (new InscriptionController())->displayFormulaire();
             break;
@@ -28,19 +23,43 @@ if(isset($_GET['ctrl'])) {
             (new HomeController())->displayHome();
             break;
         case 'admin':
-            switch($_GET['action']) {
+            $controller = new AdminController();
+            switch ($_GET['action']) {
                 case 'admin':
-                    (new AdminController())->displayAdmin();
+                   $controller->displayAdmin();
+                    break;
+                case 'addAdmin':
+                   $controller->displayAddAdmin();
                     break;
                 case 'addGame':
-                    (new AddGameController())->displayAddGame();
+                    $controller->displayAddGame();
+                    break;
+                case 'addServeur':
+                    $controller->displayAddServeur();
+                    break;
+                case 'editAdmin':
+                    $controller->displayEditAdmin();
+                    break;
+                case 'editGame':
+                    $controller->displayEditGame();
+                    break;
+                case 'editServeur':
+                    $controller->displayEditServeur();
+                    break;
+                case 'deleteUser':
+                    $controller->displayDeleteUser();
+                    break;
+                case 'deleteGame':
+                    $controller->displayDeleteGame();
+                    break;
+                case 'deleteServeur':
+                    $controller->displayDeleteServeur();
                     break;
             }
             break;
-        }
     }
-    else {
-   (new HomeController())->displayHome();
+} else {
+    (new HomeController())->displayHome();
 }
 
 

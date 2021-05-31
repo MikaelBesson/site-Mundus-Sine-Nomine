@@ -1,11 +1,10 @@
-
 <div id="slide1">
     <div class="slide_inside">
         <div id="header">
-                <a id="logDiscord" href="https://discord.gg/xEVXaUE">Rejoint-Nous : <i class="fab fa-discord"></i></a>
+            <a id="logDiscord" href="https://discord.gg/xEVXaUE">Rejoint-Nous : <i class="fab fa-discord"></i></a>
             <span id="userconnect">Bienvenue : user</span>
-                <a id="connect" href="/index.php?ctrl=formulaire"><i class="fas fa-user-plus"></i></a>
-                <a id="adminButton" href="/index.php?ctrl=admin&action=admin"><i class="fas fa-user-cog"></i></a>
+            <a id="connect" href="/index.php?ctrl=formulaire"><i class="fas fa-user-plus"></i></a>
+            <a id="adminButton" href="/index.php?ctrl=admin&action=admin"><i class="fas fa-user-cog"></i></a>
         </div>
         <figure>
             <img src="/images/titre.png" width="100%" alt="Mundus Sine Nomimé">
@@ -57,14 +56,14 @@
                 <div><img src="/images/life.jpg" alt="logoLife"></div>
             </div>
         </div>
-         <nav id="serverlist">
-             <?php
-             foreach($vars as $data_game) {
-                 $games[] = new game($data_game['id'], $data_game['name'], $data_game['infogame_fk']);
-                 echo "<button class='title'>".$data_game["name"]."</button>";
-             }
-             ?>
-         </nav>
+        <nav id="serverlist">
+            <?php
+            foreach ($vars as $data_game) {
+                $games[] = new game($data_game['id'], $data_game['name'], $data_game['infogame_fk']);
+                echo "<button class='title'>" . $data_game["name"] . "</button>";
+            }
+            ?>
+        </nav>
 
         <div id="infoserv"></div>
         <div id="connectServ"></div>

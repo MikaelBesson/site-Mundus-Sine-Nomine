@@ -1,37 +1,29 @@
 <?php
 
 /**
- * Class infogame
+ * Class infoServ
  */
-class infogame {
+class infoServ {
     private ?int $id;
-    private string $dev;
-    private string $genre;
-    private string $content;
     private string $serv_name;
     private int $ip;
     private string $password;
 
 
     /**
-     * infogame constructor.
-     * @param string $dev
-     * @param string $genre
-     * @param string $content
+     * infoServ constructor.
+     * @param int|null $id
      * @param string $serv_name
      * @param int $ip
      * @param string $password
-     * @param int|null $id
      */
-    public function __construct(string $dev, string $genre, string $content, string $serv_name, int $ip, string $password, int $id = null){
+    public function __construct(int $id = null, string $serv_name, int $ip, string $password){
         $this->id = $id;
-
-        $this->dev = $dev;
-        $this->genre = $genre;
-        $this->content = $content;
         $this->serv_name = $serv_name;
         $this->ip = $ip;
-        $this->password =$password;
+        $this->password = $password;
+
+
     }
 
     /**
@@ -48,55 +40,6 @@ class infogame {
     public function setId(?int $id): void
     {
         $this->id = $id;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDev(): string
-    {
-        return $this->dev;
-    }
-
-    /**
-     * @param string $dev
-     */
-    public function setDev(string $dev): void
-    {
-        $this->dev = $dev;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGenre(): string
-    {
-        return $this->genre;
-    }
-
-    /**
-     * @param string $genre
-     */
-    public function setGenre(string $genre): void
-    {
-        $this->genre = $genre;
-    }
-
-    /**
-     * @return string
-     */
-    public function getContent(): string
-    {
-        return $this->content;
-    }
-
-    /**
-     * @param string $content
-     */
-    public function setContent(string $content): void
-    {
-        $this->content = $content;
     }
 
     /**
@@ -146,7 +89,5 @@ class infogame {
     {
         $this->password = $password;
     }
-
-
 
 }

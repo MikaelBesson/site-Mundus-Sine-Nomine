@@ -1,12 +1,12 @@
 <div id="adminBlock">
     <div id="imgLeft"></div>
     <div id="admin">
-        <h4>Ajoutez un jeux</h4><br>
+        <h4>Modifier un jeux</h4><br>
         <form action="" method="post">
-            <label for="gameName">Nom du jeux a ajoutez</label>
+            <label for="gameName">Nom du jeux a modifier</label>
             <input type="text" name="gameName" id="gameName"><br>
-            <label for="devName">Developpeur du jeux</label>
-            <input type="text" name="devName" id="devName"><br>
+            <label for="devGame">Nom du devellopeur</label>
+            <input type="text" name="devGame" id="devGame"><br>
             <label for="content">Description du jeux</label><br>
             <textarea name="content" id="content" rows="6" cols="70"></textarea><br>
             <input type="submit" value="Envoyer">
@@ -16,4 +16,5 @@
     </div>
     <div id="imgRight"></div>
 </div>
+
 

@@ -4,8 +4,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 
 class HomeController extends Controller {
 
+    /**
+     * Returns a view of home
+     */
     public function displayHome() {
-        // chercher les games names
+        //look up the games names
         $conn = new DB();
         $req = $conn->connect()->prepare("SELECT * FROM game");
         $req->execute();

@@ -1,6 +1,5 @@
 
 
-/* animation du sous titre */
 /* animation of the subtitle */
 
 let textWrapper = document.querySelector('.ml2');
@@ -38,11 +37,11 @@ for(let i = 0; i< titles.length; i++) {
             const result = JSON.parse(xhr.responseText);
             const resultHTML = result.reverse().map(function (message) {
                 return `
-                <div>Nom : ${message.name}</div>
-                <div>Devellopeur : ${message.dev}</div>
-                <div>Genre : ${message.genre}</div>
-                <br>
-                <div id="description">Description :<br>${message.content}</div>
+                    <div>Nom : ${message.name}</div>
+                    <div>Devellopeur : ${message.dev}</div>
+                    <div>Genre : ${message.genre}</div>
+                    <br>
+                    <div id="description">Description :<br>${message.content}</div>
                 `
             }).join('');
             infoserv.innerHTML = resultHTML;
@@ -54,10 +53,10 @@ for(let i = 0; i< titles.length; i++) {
                 const result2 = JSON.parse(xhr2.responseText);
                 const resultHTML2 = result2.map(function (message2) {
                     return `
-                <div>Info Serveur :
-                <div>Nom du serveur :<br> ${message2.serv_name}</div>
-                <div>Ip du serveur :<br> ${message2.ip}</div>
-                <div>Password du serveur :<br> ${message2.password}</div>
+                        <div>Info Serveur :
+                        <div>Nom du serveur :<br> ${message2.serv_name}</div>
+                        <div>Ip du serveur :<br> ${message2.ip}</div>
+                        <div>Password du serveur :<br> ${message2.password}</div>
                 </div>
                     `
                 }).join('');

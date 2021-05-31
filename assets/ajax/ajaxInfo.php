@@ -15,19 +15,30 @@ else{
     header("Location: /index.php");
 }
 
-
+/**
+ * return all info game
+ * @param $name
+ */
 function infos($name){
     $conn = new DB();
-    $result = $conn->connect()->prepare("SELECT * FROM infogame INNER JOIN game on infogame.id = game.infogame_fk WHERE game.name = :name");
+    $result = $conn->connect()->prepare("
+        SELECT * FROM infogame INNER JOIN game on infogame.id = game.infogame_fk WHERE game.name = :name
+    ");
     $result->bindValue(':name', $name);
     $result->execute();
     $message = $result->fetchAll();
     echo json_encode($message);
 }
 
+/**
+ * return all server info
+ * @param $name
+ */
 function infosServ($name){
     $conn = new DB();
-    $result = $conn->connect()->prepare("SELECT * FROM infoserv INNER JOIN game on game.id = infoserv.infogame_fk WHERE game.name = :name");
+    $result = $conn->connect()->prepare("
+        SELECT * FROM infoserv INNER JOIN game on game.id = infoserv.infogame_fk WHERE game.name = :name
+    ");
     $result->bindValue(':name', $name);
     $result->execute();
     $message2 = $result->fetchAll();

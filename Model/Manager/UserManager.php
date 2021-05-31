@@ -1,6 +1,9 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/user.php';
 
+/**
+ * Class UserManager
+ */
 class UserManager {
 
 

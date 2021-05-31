@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * connect to database
+ * Class DB
+ */
 class DB {
     public string $server ='localhost';
     public string $user = 'root';
@@ -8,12 +11,19 @@ class DB {
     public string $db = 'mundus';
 
 
-    //__const et tab
+    private PDO $dbLink;
+
+    /**
+     * DB constructor.
+     */
     public function __construct() {
         $this->dbLink = $this->connect();
     }
 
 
+    /**
+     * @return PDO
+     */
     function connect() {
         $dsn = "mysql:host=$this->server;dbname=$this->db;charset=utf8";
         try {

@@ -1,8 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/infogame.php';
 
+/**
+ * Class infoGameManager
+ */
 class infoGameManager {
 
+
+    /**
+     * return all info of game
+     * @return array
+     */
     public function getInfo() {
         $conn = new DB();
         $infos = [];
@@ -29,19 +37,13 @@ class infoGameManager {
         $dev = $verif->verifInput($data['dev']);
         $genre = $verif->verifInput($data['genre']);
         $content = $verif->verifInput($data['content']);
-        $serv_name = $verif->verifInput($data['serv_name']);
-        $ip = $verif->verifInput($data['ip']);
-        $password = $verif->verifInput($data['password']);
 
-        $req = $conn->connect()->prepare("INSERT INTO infogame(dev, genre, content, serv_name, ip, password)
+        $req = $conn->connect()->prepare("INSERT INTO infogame(dev, genre, content)
                                                 VALUES (:dev, :genre, :content, :serv_name, :ip, :password)");
 
         $req->bindValue('dev', $dev);
         $req->bindValue('genre', $genre);
         $req->bindValue('content', $content);
-        $req->bindValue('serv_name', $serv_name);
-        $req->bindValue('ip', $ip);
-        $req->bindValue('password', $password);
 
         if($req->execute()) {
             return "contenue ajoutez avec succes !!";
@@ -58,15 +60,11 @@ class infoGameManager {
      */
     public function editInfo(infogame $infogame) {
         $conn = new DB();
-        $req = $conn->connect()->prepare("UPDATE infogame SET dev = :dev, genre = :genre, content = :content,
-                                            serv_name = :serv_name, ip = :ip, password = :password");
+        $req = $conn->connect()->prepare("UPDATE infogame SET dev = :dev, genre = :genre, content = :content");
 
         $req->bindValue('dev', $infogame->getDev());
         $req->bindValue('genre', $infogame->getGenre());
         $req->bindValue('content', $infogame->getContent());
-        $req->bindValue('serv_name', $infogame->getServName());
-        $req->bindValue('ip', $infogame->getIp());
-        $req->bindValue('password', $infogame->getPassword());
 
         if($req->execute()) {
             echo "modification effectuer avec succes !!";

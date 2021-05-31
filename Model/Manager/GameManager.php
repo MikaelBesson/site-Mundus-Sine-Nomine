@@ -1,6 +1,8 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/game.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
+
+
 class GameManager {
 
 
@@ -65,7 +67,11 @@ class GameManager {
     }
 
 
-    function deletteGame($gameId) {
+    /**
+     * delete a game
+     * @param $gameId
+     */
+    function deleteGame($gameId) {
         $conn = new DB();
         $req = $conn->connect()->prepare("DELETE FROM game WHERE id = :id");
         $req->bindValue(':id', $gameId);

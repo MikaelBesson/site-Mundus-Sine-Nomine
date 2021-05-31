@@ -2,29 +2,26 @@
 
 
 class cleanInput {
-    // nettoyage des inputs
     // cleaning of inputs
     /**
-     * assainit le contenu d'une variable
+     * sanitizes the content of a variable
      * @param $data
      * @return string
      */
     function verifInput($data) : string {
-        //supprime les espaces
+        //remove spaces
         $data = trim($data);
-        //supprime les antislash
+        //remove backslashes
         $data = stripslashes($data);
-        //transforme les caracteres speciaux en HTML
+        //transform special characters into HTML
         $data = htmlspecialchars($data);
-        //ajoute des slashes pour eviter les chaine
-        // de caractere dans les formulaires
+        //add slashes to avoid strings character in forms
         $data = addslashes($data);
         return $data;
     }
-    // verifie les parametres si ils sont vide retourne false
     // check the parameters if they are empty returns false
     /**
-     * verifie les parametres vide return false
+     * check parameters empty return false
      * @param string ...$params
      * @return bool
      */

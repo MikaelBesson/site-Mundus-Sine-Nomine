@@ -1,13 +1,21 @@
 <?php
 
-
+/**
+ * Class game
+ */
 class game {
     private ?int $id;
     private string $name;
     private ?int $infogame_fk;
 
 
-    public function __construct(int $id = null, string $name, int $infogame_fk = null){
+    /**
+     * game constructor.
+     * @param int|null $id
+     * @param string $name
+     * @param int|null $infogame_fk
+     */
+    public function __construct(int $id, string $name, int $infogame_fk = null){
         $this->id = $id;
         $this->name = $name;
         $this->infogame_fk = $infogame_fk;
