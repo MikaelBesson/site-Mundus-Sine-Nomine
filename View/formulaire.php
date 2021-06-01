@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST, $_POST['name'], $_POST['password'], $_POST['email'])) {
+if (isset($_POST,$_POST['name'], $_POST['password'], $_POST['email'])) {
     require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
     $manager = new UserManager();
     $message = $manager->addUser($_POST);
@@ -15,10 +15,11 @@ if (isset($_POST, $_POST['name'], $_POST['password'], $_POST['email'])) {
         <div class="form">
             <div class="label">
                 <label for="email">Votre adresse mail :</label><br>
+                <label for="name">Votre Nom :</label><br>
             </div>
             <div class="input">
-                <input type="text" name="email" id="email" placeholder="Votre email ici" title="adresse valide merci"
-                       required><br>
+                <input type="text" name="email" id="email" placeholder="Votre email ici" title="adresse valide merci" required><br>
+                <input type="text" name="name" id="name" placeholder="Votre Nom ici" title="doit etre le meme que sur discord" required><br>
             </div>
         </div>
     </form>

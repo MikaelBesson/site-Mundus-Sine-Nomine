@@ -41,11 +41,11 @@ class infoGameManager {
      */
     public function addInfo($dev, $genre, $content) {
         $conn = new DB();
-        $verif = new cleanInput();
+        $check = new cleanInput();
 
-        $dev = $verif->verifInput($dev);
-        $genre = $verif->verifInput($genre);
-        $content = $verif->verifInput($content);
+        $dev = $check->verifInput($dev);
+        $genre = $check->verifInput($genre);
+        $content = $check->verifInput($content);
 
         $req = $conn->connect()->prepare("INSERT INTO infogame(dev, genre, content)
                                                 VALUES (:dev, :genre, :content)");

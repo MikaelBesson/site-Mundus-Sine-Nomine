@@ -14,7 +14,8 @@ anime.timeline({loop: true})
         easing: "easeOutExpo",
         duration: 950,
         delay: (el, i) => 70*i
-    }).add({
+    })
+    .add({
     targets: '.ml2',
     opacity: 0,
     duration: 3000,

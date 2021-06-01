@@ -26,26 +26,26 @@ class infoServManager {
 
     public function getLastId(){
         $conn = new DB();
-        $req = $conn->connect()->prepare("SELECT MAX(id) as id FROM infogame");
+        $req = $conn->connect()->prepare("SELECT MAX(id) as id FROM infoserv");
         $req->execute();
         return $req->fetch();
     }
 
 
     /**
-     * for add game infos
+     * for add server infos
      * @param $serv_name
      * @param $ip
      * @param $password
-     * @return infoServ|string
+     * @return string
      */
     public function addInfoServ($serv_name, $ip, $password) {
         $conn = new DB();
-        $verif = new cleanInput();
+        $check = new cleanInput();
 
-        $serv_name = $verif->verifInput($serv_name);
-        $ip = $verif->verifInput($ip);
-        $password = $verif->verifInput($password);
+        $serv_name = $check->verifInput($serv_name);
+        $ip = $check->verifInput($ip);
+        $password = $check->verifInput($password);
 
         $req = $conn->connect()->prepare("INSERT INTO infoserv(serv_name, ip, password) 
                                                 VALUES (:serv_name, :ip, :password)");

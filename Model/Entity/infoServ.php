@@ -17,7 +17,7 @@ class infoServ {
      * @param string $password
      * @param int|null $id
      */
-    public function __construct(string $serv_name, int $ip, string $password, int $id = null){
+    public function __construct(string $serv_name, int $ip, string $password, int $id){
         $this->id = $id;
         $this->serv_name = $serv_name;
         $this->ip = $ip;
