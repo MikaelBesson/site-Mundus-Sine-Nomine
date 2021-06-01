@@ -1,12 +1,12 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . 'Model/Manager/UserManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 
 
 session_start();
 $conn = new DB();
-$check = new cleanInput();
+
 
  /**
  * Returns a view.
@@ -24,11 +24,6 @@ class AdminController extends Controller
      * Display the add form
      */
     public function displayAddAdmin() {
-        // Si tous mes params de post sont présents ET pas vide, c'est que le formulaire a été soumis !
-        if(isset($_POST['userName'])) {
-            $user = new UserManager();
-            $user->editUser();
-        }
 
         $this->render('admin/addAdmin', 'Ajoutez un Admin');
     }

@@ -1,4 +1,5 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/game.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
 
@@ -28,20 +29,22 @@ class GameManager {
      * @param $data
      * @return string
      */
-    public function addGame($data) {
+    public function addGame($name, $dev, $genre, $content) {
         $conn = new DB();
         $verif = new cleanInput();
 
-        $name = $verif->verifInput($data['name']);
-        $infogame = $verif->verifInput($data['infogame_fk']);
+        $game = $verif->verifInput($name);
 
-        $req = $conn->connect()->prepare("INSERT INTO game(name, infogame_fk) VALUES (:name, :infogame_fk)");
+        $infos = new infoGameManager();
+        $info = $infos->addInfo($dev, $genre, $content);
+
+        $req = $conn->connect()->prepare("INSERT INTO game (name, infogame_fk) VALUES (:name, :infogame_fk)");
 
         $req->bindValue(':name', $name);
-        $req->bindValue(':infogame', $infogame);
+        $req->bindValue(':infogame_fk', $info->getId());
 
         if($req->execute()) {
-            return "game ajoutez avec succes";
+            return "jeux ajoutez avec succes";
         }
         else{
             return 'erreur lors de l\'enregistrement';
@@ -59,7 +62,7 @@ class GameManager {
         $req->bindValue(':id', $game->getId());
 
         if($req->execute()){
-            echo 'game modifié avec succes !!';
+            echo 'jeux modifié avec succes !!';
         }
         else{
             echo "erreur pendant la modification";
@@ -77,7 +80,7 @@ class GameManager {
         $req->bindValue(':id', $gameId);
 
         if ($req->execute()) {
-            echo 'game supprimer avec succes';
+            echo 'jeux supprimer avec succes';
         }
     }
 

@@ -24,32 +24,41 @@ class infoServManager {
         return $infos;
     }
 
+    public function getLastId(){
+        $conn = new DB();
+        $req = $conn->connect()->prepare("SELECT MAX(id) as id FROM infogame");
+        $req->execute();
+        return $req->fetch();
+    }
+
 
     /**
-     * ADD SERVEUR INFO
-     * @param $data
-     * @return string
+     * for add game infos
+     * @param $serv_name
+     * @param $ip
+     * @param $password
+     * @return infoServ|string
      */
-    public function addInfoServ($data) {
+    public function addInfoServ($serv_name, $ip, $password) {
         $conn = new DB();
         $verif = new cleanInput();
 
-        $serv_name = $verif->verifInput($data['serv_name']);
-        $ip = $verif->verifInput($data['ip']);
-        $password = $verif->verifInput($data['password']);
+        $serv_name = $verif->verifInput($serv_name);
+        $ip = $verif->verifInput($ip);
+        $password = $verif->verifInput($password);
 
-        $req = $conn->connect()->prepare("INSERT INTO infoserv(serv_name, ip, password) VALUES (:serv_name, :ip, :password)");
+        $req = $conn->connect()->prepare("INSERT INTO infoserv(serv_name, ip, password) 
+                                                VALUES (:serv_name, :ip, :password)");
 
         $req->bindValue('serv_name', $serv_name);
         $req->bindValue(':ip', $ip);
         $req->bindValue(':password', $password);
 
-        if($req->execute()) {
-            return "infos serveur ajoutez avec succes";
+        if(!$req->execute()) {
+            return "une erreur est survenue";
         }
-        else{
-            return 'erreur lors de l\'enregistrement';
-        }
+        return (new infoServ($serv_name, $ip, $password, $this->getLastId()['id']));
+
     }
 
     /**
@@ -64,7 +73,7 @@ class infoServManager {
         $req->bindValue(':password', $infoServ->getPassword());
 
         if($req->execute()){
-            echo 'info modifié avec succes !!';
+            echo 'info serveur modifié avec succes !!';
         }
         else{
             echo "erreur pendant la modification";

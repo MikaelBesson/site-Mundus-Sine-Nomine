@@ -12,18 +12,16 @@ class infoServ {
 
     /**
      * infoServ constructor.
-     * @param int|null $id
      * @param string $serv_name
      * @param int $ip
      * @param string $password
+     * @param int|null $id
      */
-    public function __construct(int $id = null, string $serv_name, int $ip, string $password){
+    public function __construct(string $serv_name, int $ip, string $password, int $id = null){
         $this->id = $id;
         $this->serv_name = $serv_name;
         $this->ip = $ip;
         $this->password = $password;
-
-
     }
 
     /**

@@ -19,38 +19,46 @@ class infoGameManager {
         $data = $req->fetchAll();
         foreach($data as $data_info) {
             $infos[] = new infogame($data_info['dev'], $data_info['genre'],
-                        $data_info['content'], $data_info['serv_name'], $data_info['ip'], $data_info['password'], $data_info['id']);
+                        $data_info['content'], $data_info['id']);
         }
         return $infos;
+    }
+
+    public function getLastId(){
+        $conn = new DB();
+        $req = $conn->connect()->prepare("SELECT MAX(id) as id FROM infogame");
+        $req->execute();
+        return $req->fetch();
     }
 
 
     /**
      * for add info Game
-     * @param $data
+     * @param $dev
+     * @param $genre
+     * @param $content
      * @return string
      */
-    public function addInfo($data) {
+    public function addInfo($dev, $genre, $content) {
         $conn = new DB();
         $verif = new cleanInput();
 
-        $dev = $verif->verifInput($data['dev']);
-        $genre = $verif->verifInput($data['genre']);
-        $content = $verif->verifInput($data['content']);
+        $dev = $verif->verifInput($dev);
+        $genre = $verif->verifInput($genre);
+        $content = $verif->verifInput($content);
 
         $req = $conn->connect()->prepare("INSERT INTO infogame(dev, genre, content)
-                                                VALUES (:dev, :genre, :content, :serv_name, :ip, :password)");
+                                                VALUES (:dev, :genre, :content)");
 
         $req->bindValue('dev', $dev);
         $req->bindValue('genre', $genre);
         $req->bindValue('content', $content);
 
-        if($req->execute()) {
-            return "contenue ajoutez avec succes !!";
+        if(!$req->execute()) {
+            return "une erreur est survenue";
         }
-        else{
-            return "une erreur est survenue ";
-        }
+
+        return (new infogame($dev, $genre, $content, $this->getLastId()['id']));
     }
 
 
@@ -85,7 +93,7 @@ class infoGameManager {
         $req->bindValue('id', $gameId);
 
         if($req->execute()) {
-            echo 'game supprimer avec succes !!';
+            echo 'jeux supprimer avec succes !!';
         }
 
     }

@@ -11,7 +11,9 @@
             <input type="text" name="servPass" id="servPass"><br>
             <input type="submit" value="Envoyer">
         </form>
-        <div id="responseSql"></div>
+        <div id="responseSql">
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/utils/messages.php'; ?>
+        </div>
         <a href="/index.php?ctrl=admin&action=admin">retour a l'administration</a>
     </div>
     <div id="imgRight"></div>

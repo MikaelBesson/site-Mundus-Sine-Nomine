@@ -23,6 +23,20 @@ class UserManager {
         return $users;
     }
 
+    public function getUserByName($name) {
+        $conn = new DB();
+        $user = [];
+        $req = $conn->connect()->prepare("SELECT * FROM user WHERE name = :name");
+        $req->bindValue(':name', $name);
+
+        $req->execute();
+        $data = $req->fetch();
+        if($data) {
+            $user = new user($data['id'], $data['name'], $data['password'], $data['email'], $data['role']);
+        }
+        return $user;
+    }
+
     /**
      * add a new user
      * @param $data
@@ -61,10 +75,11 @@ class UserManager {
      */
     public function editUser(user $user) {
         $conn = new DB();
-        $req = $conn->connect()->prepare("UPDATE user SET name = :name, password = :password, email = :email WHERE id = :id");
+        $req = $conn->connect()->prepare("UPDATE user SET name = :name, password = :password, email = :email, role_fk = :role WHERE id = :id");
         $req->bindValue(':name', $user->getName());
         $req->bindValue(':password',password_hash($user->getPassword(),PASSWORD_DEFAULT));
         $req->bindValue(':email', $user->getEmail());
+        $req->bindValue(':role', $user->getRole());
         $req->bindValue(':id', $user->getId());
 
         if($req->execute()){
