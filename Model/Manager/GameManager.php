@@ -25,8 +25,10 @@ class GameManager {
 
 
     /**
-     * add a new game
-     * @param $data
+     * @param $name
+     * @param $dev
+     * @param $genre
+     * @param $content
      * @return string
      */
     public function addGame($name, $dev, $genre, $content) {
@@ -44,7 +46,7 @@ class GameManager {
         $req->bindValue(':infogame_fk', $info->getId());
 
         if($req->execute()) {
-            return "jeux ajoutez avec succes";
+            return "jeux ajouté avec succès";
         }
         else{
             return 'erreur lors de l\'enregistrement';
@@ -74,7 +76,7 @@ class GameManager {
      * delete a game
      * @param $gameId
      */
-    function deleteGame($gameId) {
+    public function deleteGame($gameId) {
         $conn = new DB();
         $req = $conn->connect()->prepare("DELETE FROM game WHERE id = :id");
         $req->bindValue(':id', $gameId);

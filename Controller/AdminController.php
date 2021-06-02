@@ -39,7 +39,9 @@ class AdminController extends Controller
      * Display the add server
      */
     public function displayAddServeur() {
-        $this->render('admin/addServeur', 'Ajoutez un serveur');
+        $manager = new GameManager();
+        $var['game'] = $manager->getGames();
+        $this->render('admin/addServeur', 'Ajoutez un serveur', $var);
     }
 
     /**

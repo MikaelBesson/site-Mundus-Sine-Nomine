@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/infoServ.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 
 /**
  * Class infoServManager
@@ -37,9 +37,10 @@ class infoServManager {
      * @param $serv_name
      * @param $ip
      * @param $password
+     * @param $gameId
      * @return string
      */
-    public function addInfoServ($serv_name, $ip, $password) {
+    public function addInfoServ($serv_name, $ip, $password, $gameId): string    {
         $conn = new DB();
         $check = new cleanInput();
 
@@ -47,17 +48,20 @@ class infoServManager {
         $ip = $check->verifInput($ip);
         $password = $check->verifInput($password);
 
-        $req = $conn->connect()->prepare("INSERT INTO infoserv(serv_name, ip, password) 
-                                                VALUES (:serv_name, :ip, :password)");
+        $req = $conn->connect()->prepare("INSERT INTO infoserv(serv_name, ip, password, game_fk) 
+                                                VALUES (:serv_name, :ip, :password, :game)");
 
         $req->bindValue('serv_name', $serv_name);
-        $req->bindValue(':ip', $ip);
+        $req->bindValue(':ip', intval($ip));
         $req->bindValue(':password', $password);
+        $req->bindValue(':game', intval($gameId));
 
         if(!$req->execute()) {
             return "une erreur est survenue";
         }
-        return (new infoServ($serv_name, $ip, $password, $this->getLastId()['id']));
+        else {
+            return "serveur ajouté avec succès";
+        }
 
     }
 

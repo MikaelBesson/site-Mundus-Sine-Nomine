@@ -5,7 +5,13 @@
         <h4>Ajoutez un Serveur</h4><br>
         <form action="/addServerFunction.php" method="post">
             <label for="gameName">pour quel jeux voulez vous un serveur</label>
-            <input type="text" name="gameName" id="gameName"><br><br>
+            <select name="gameName" id="gameName">
+            <?php
+            foreach ($vars['game'] as $game){
+                echo "<option value='" . $game->getId() . "'>". $game->getName(). "</option>";
+            }
+            ?>
+            </select> <br><br>
             <label for="servName">Nom du serveur a ajoutez</label>
             <input type="text" name="servName" id="servName"><br>
             <label for="IpAdress">Adresse IP du serveur</label>

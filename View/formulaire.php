@@ -38,7 +38,7 @@ if (isset($_POST,$_POST['name'], $_POST['password'], $_POST['email'])) {
                        required><br>
                 <input type="text" name="name" id="name" placeholder="Votre Nom ici"
                        title="Doit etre le meme que sur discord" required><br>
-                <input type="text" name="password" id="password" placeholder="Votre password ici"
+                <input type="password" name="password" id="password" placeholder="Votre password ici"
                        title="1,2,3,4,5 est deja prit change" required><br>
             </div>
             <div class="subMessage">

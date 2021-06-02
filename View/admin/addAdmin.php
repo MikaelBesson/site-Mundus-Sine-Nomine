@@ -9,7 +9,7 @@
             <input type="submit" value="Envoyer">
         </form>
         <div id="responseSql">
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/utils/messages.php'; ?>
+
         </div>
         <a href="/index.php?ctrl=admin&action=admin">retour a l'administration</a>
     </div>
