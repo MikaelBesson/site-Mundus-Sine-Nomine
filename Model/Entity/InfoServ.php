@@ -8,6 +8,7 @@ class infoServ {
     private string $serv_name;
     private int $ip;
     private string $password;
+    private int $game_fk;
 
 
     /**
@@ -15,14 +16,18 @@ class infoServ {
      * @param string $serv_name
      * @param int $ip
      * @param string $password
-     * @param int|null $id
+     * @param int $game_fk
+     * @param int $id
      */
-    public function __construct(string $serv_name, int $ip, string $password, int $id){
+    public function __construct(string $serv_name, int $ip, string $password, int $game_fk, int $id){
         $this->id = $id;
         $this->serv_name = $serv_name;
         $this->ip = $ip;
         $this->password = $password;
+        $this->game_fk = $game_fk;
     }
+
+
 
     /**
      * @return int|null
@@ -86,6 +91,22 @@ class infoServ {
     public function setPassword(string $password): void
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return int
+     */
+    public function getGameFk(): int
+    {
+        return $this->game_fk;
+    }
+
+    /**
+     * @param int $game_fk
+     */
+    public function setGameFk(int $game_fk): void
+    {
+        $this->game_fk = $game_fk;
     }
 
 }

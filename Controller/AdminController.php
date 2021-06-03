@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/RoleManager.php';
 
 
 session_start();
@@ -45,25 +46,12 @@ class AdminController extends Controller
     }
 
     /**
-     * Display edit admin
+     * Display edit user
      */
-    public function displayEditAdmin() {
-
-        $this->render('admin/editAdmin', 'Modifier un utilisateur');
-    }
-
-    /**
-     * Display edit game
-     */
-    public function displayEditGame() {
-        $this->render('admin/editGame', 'Modifier un jeux');
-    }
-
-    /**
-     * Display edit server
-     */
-    public function displayEditServeur() {
-        $this->render('admin/editServeur', 'Modifier un serveur');
+    public function displayEditUser() {
+        $manager = new RoleManager();
+        $var['role'] = $manager->getRoles();
+        $this->render('admin/editUser', 'Modifier un utilisateur', $var);
     }
 
     /**

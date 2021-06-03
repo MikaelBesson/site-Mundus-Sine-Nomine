@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/game.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/Game.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
 
 
@@ -23,6 +23,18 @@ class GameManager {
         return $games;
     }
 
+    /**
+     * return one game
+     * @return game
+     */
+    public function getGame() {
+        $conn = new DB();
+        $req = $conn->connect()->prepare("SELECT * FROM game");
+        $req->execute();
+        $data = $req->fetch();
+
+        return $game = new game($data['id'], $data['name'], $data['infogame_fk']);
+    }
 
     /**
      * @param $name
@@ -64,7 +76,7 @@ class GameManager {
         $req->bindValue(':id', $game->getId());
 
         if($req->execute()){
-            echo 'jeux modifié avec succes !!';
+            echo 'jeux modifié avec succès !!';
         }
         else{
             echo "erreur pendant la modification";
@@ -82,7 +94,7 @@ class GameManager {
         $req->bindValue(':id', $gameId);
 
         if ($req->execute()) {
-            echo 'jeux supprimer avec succes';
+            echo 'jeux supprimer avec succès';
         }
     }
 

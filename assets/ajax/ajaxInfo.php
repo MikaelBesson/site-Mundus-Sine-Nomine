@@ -37,7 +37,7 @@ function infos($name){
 function infosServ($name){
     $conn = new DB();
     $result = $conn->connect()->prepare("
-        SELECT * FROM infoserv INNER JOIN game on game.id = infoserv.infogame_fk WHERE game.name = :name
+        SELECT * FROM infoserv INNER JOIN game on game.id = infoserv.game_fk WHERE game.name = :name
     ");
     $result->bindValue(':name', $name);
     $result->execute();

@@ -1,5 +1,3 @@
-
-
 /* animation of the subtitle */
 
 let textWrapper = document.querySelector('.ml2');

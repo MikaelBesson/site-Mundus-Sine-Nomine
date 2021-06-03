@@ -3,8 +3,8 @@
     <div id="admin">
         <h4>Supprimer un jeux</h4><br>
         <form action="" method="post">
-            <label for="delName">Nom du jeux a supprimer</label>
-            <input type="text" name="delName" id="delName"><br>
+            <label for="delName">Nom du jeux a supprimer</label><br>
+            <input type="text" name="delName" id="delName"><br><br>
             <input type="submit" value="Envoyer">
         </form>
         <div id="responseSql">

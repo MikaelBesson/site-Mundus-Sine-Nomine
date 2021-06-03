@@ -3,14 +3,16 @@
     <div id="admin">
         <h4>Ajoutez un jeux</h4><br>
         <form action="/addGameFunction.php" method="post">
-            <label for="gameName">Nom du jeux a ajoutez</label>
-            <input type="text" name="gameName" id="gameName"><br>
-            <label for="devName">Developpeur du jeux</label>
-            <input type="text" name="devName" id="devName"><br>
-            <label for="genreName">Genre du jeux</label>
-            <input type="text" name="genreName" id="genreName"><br>
-            <label for="content">Description du jeux</label><br>
-            <textarea name="content" id="content" rows="6" cols="70"></textarea><br>
+                <label for="gameName">Nom du jeux a ajoutez</label><br>
+                <input type="text" name="gameName" id="gameName"><br>
+                <label for="devName">Developpeur du jeux</label><br>
+                <input type="text" name="devName" id="devName"><br>
+                <label for="genreName">Genre du jeux</label><br>
+                <input type="text" name="genreName" id="genreName"><br>
+            <div>
+                <label for="content">Description du jeux</label><br>
+                <textarea name="content" id="content" rows="6" cols="70"></textarea><br>
+            </div><br>
             <input type="submit" value="Envoyer">
         </form>
         <div id="responseSql">

@@ -2,9 +2,9 @@
     <div id="imgLeft"></div>
     <div id="admin">
         <h4>Supprimer un utilisateur</h4><br>
-        <form action="" method="post">
-            <label for="delUser">Utilisateur a supprimer</label>
-            <input type="text" name="delUser" id="delUser"><br>
+        <form action="/deleteUserFunction.php" method="post">
+            <label for="delUser">Utilisateur a supprimer</label><br>
+            <input type="text" name="delUser" id="delUser"><br><br>
             <input type="submit" value="Envoyer">
         </form>
         <div id="responseSql">

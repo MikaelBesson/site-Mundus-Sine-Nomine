@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/infoServ.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/InfoServ.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Classes/cleanInput.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 
