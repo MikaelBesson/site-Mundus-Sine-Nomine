@@ -6,6 +6,30 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/User.php';
  */
 class UserManager {
 
+    public function checkLog($email, $pass) {
+        $conn = new DB();
+        $req = $conn->connect()->prepare("SELECT * FROM user WHERE email = :email");
+        $req->bindValue(':email', $email);
+        if($req->execute()){
+            $data = $req->fetch();
+            if($data){
+                if(password_verify($pass, $data['password'])){
+                    $user = new user($data['id'],$data['name'],$data['password'],$data['email'],$data['role_fk']);
+                    return $user;
+                }
+                else {
+                    return null;
+                }
+            }
+            else {
+                return null;
+            }
+        }
+        else {
+            return null;
+        }
+    }
+
 
     /**
      * return all users
@@ -35,7 +59,7 @@ class UserManager {
             $user = new user($data['id'], $data['name'], $data['password'], $data['email'], $data['role_fk']);
             return $user;
         }
-
+        return null;
     }
 
     /**
@@ -46,8 +70,6 @@ class UserManager {
     public function addUser($data) {
         $conn = new DB();
         $verif = new cleanInput();
-
-
 
         $name = $verif->verifInput($data['name']);
         $password = $verif->verifInput($data['password']);
@@ -71,14 +93,13 @@ class UserManager {
     }
 
     /**
-     * edit an user
      * @param user $user
+     * @return string
      */
     public function editUser(user $user) {
         $conn = new DB();
-        $req = $conn->connect()->prepare("UPDATE user SET name = :name, password = :password, email = :email, role_fk = :role WHERE id = :id");
+        $req = $conn->connect()->prepare("UPDATE user SET name = :name, email = :email, role_fk = :role WHERE id = :id");
         $req->bindValue(':name', $user->getName());
-        $req->bindValue(':password',password_hash($user->getPassword(),PASSWORD_DEFAULT));
         $req->bindValue(':email', $user->getEmail());
         $req->bindValue(':role', $user->getRole());
         $req->bindValue(':id', $user->getId());
@@ -92,8 +113,8 @@ class UserManager {
     }
 
     /**
-     * delette an user
      * @param $userId
+     * @return string
      */
     function deleteUser($userId) {
         $conn = new DB();

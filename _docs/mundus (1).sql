@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 03 juin 2021 à 14:07
+-- Généré le : ven. 04 juin 2021 à 13:20
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -33,8 +33,9 @@ CREATE TABLE IF NOT EXISTS `game` (
   `name` varchar(100) COLLATE utf8_bin NOT NULL,
   `infogame_fk` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
   KEY `info` (`infogame_fk`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `game`
@@ -46,8 +47,7 @@ INSERT INTO `game` (`id`, `name`, `infogame_fk`) VALUES
 (4, 'Valheim', 4),
 (5, 'Last oasis', 5),
 (6, 'Scum', 6),
-(7, 'Life is feudal', 7),
-(10, 'test', 10);
+(7, 'Life is feudal', 7);
 
 -- --------------------------------------------------------
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `infogame` (
   `genre` varchar(50) COLLATE utf8_bin NOT NULL,
   `content` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `infogame`
@@ -74,8 +74,7 @@ INSERT INTO `infogame` (`id`, `dev`, `genre`, `content`) VALUES
 (4, 'Iron Gate AB', 'Sandbox, survie', 'Le joueur incarne un viking tombé au combat à Valheim, dixième monde fictif de la mythologie nordique où il doit fabriquer des outils, construire des abris et combattre des ennemis pour survivre. L\'histoire veut que le joueur prouve sa valeur aux dieux en survivant face à la faune rude aux côtés de laquelle il évolue.Des stèles à travers le monde témoignent du récit de vikings auparavant déchus.'),
 (5, 'Donkey Crew', 'Survival MMO', 'La Terre a cessé de tourner et les survivants doivent être constamment en mouvement pour rester dans la zone habitable entre l\'obscurité froide et la chaleur torride du soleil. Construisez des marcheurs en bois pour les bases de combat. Maniez des armes portatives et montées sur marcheurs pour combattre les Rupus et d\'autres nomades.'),
 (6, 'Gamepires', 'Survie', 'Le jeu se déroule sur une île inspirée de la Méditerranée où 64 joueurs par serveur tenteront de survivre et de quitter l\'île en retirant d\'abord l\'implant qui vous empêche de partir. Le joueur gagnera des points de renommée en participant à divers événements motivés par l\'action ou tout simplement en survivant dans un environnement hostile. Ces points de renommée permettent au joueur d\'être cloné en cas de décès et sont utilisés comme devises pour acheter ou échanger dans diverses zones de sécurité. Le joueur sera en mesure de fortifier les structures et les points existants afin de sécuriser les positions ou de stocker les éléments nécessaires au joueur. '),
-(7, 'Bitbox', 'Survie', 'Life Is Feudal: Your Own est un jeu vidéo de type sandbox développé par Bitbox, se plaçant dans l\'univers du médiéval réaliste dans un monde fictif.'),
-(10, 'test', 'test', 'test');
+(7, 'Bitbox', 'Survie', 'Life Is Feudal: Your Own est un jeu vidéo de type sandbox développé par Bitbox, se plaçant dans l\'univers du médiéval réaliste dans un monde fictif.');
 
 -- --------------------------------------------------------
 
@@ -93,7 +92,14 @@ CREATE TABLE IF NOT EXISTS `infoserv` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `serv_name` (`serv_name`),
   KEY `game_fk` (`game_fk`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `infoserv`
+--
+
+INSERT INTO `infoserv` (`id`, `serv_name`, `ip`, `password`, `game_fk`) VALUES
+(7, 'test7', 10101, 'osef', 2);
 
 -- --------------------------------------------------------
 
@@ -133,15 +139,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `role` (`role_fk`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `password`, `email`, `role_fk`) VALUES
-(1, 'groot', '$2y$10$p4GL7JhW5bl7bEIgIjbMhOFsnL4rQ7cGr0VnScysZ9MCdhxV2Mxze', 'besson.mikael04@gmail.com', 1),
-(3, 'tester', '$2y$10$ivPgMaY0dLb.zaCBG8MPFuB9c.FZsMOP1HZIJVMZ2SWI.DE6dJ0ke', 'tester@gmail.com', 3);
+(9, 'bob', '$2y$10$qW3SMjTsJhu4HAP24mpehOjB3M8Qf.t6Ghgl4xA.TrASjYgy8uyAG', 'bob@gmail.com', 3);
 
 --
 -- Contraintes pour les tables déchargées

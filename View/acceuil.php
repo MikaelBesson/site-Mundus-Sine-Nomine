@@ -2,9 +2,18 @@
     <div class="slide_inside">
         <div id="header">
             <a id="logDiscord" href="https://discord.gg/xEVXaUE">Rejoint-Nous : <i class="fab fa-discord"></i></a>
-            <span id="userconnect">Bienvenue : user</span>
+            <?php
+            if(isset($_SESSION['user']) && $_SESSION['user']->getRole() !== 3){?>
+                <span id="userconnect">Bienvenue : <?= $_SESSION['user']->getName()?></span><?php
+            }
+            ?>
             <a id="connect" href="/index.php?ctrl=formulaire"><i class="fas fa-user-plus"></i></a>
-            <a id="adminButton" href="/index.php?ctrl=admin&action=admin"><i class="fas fa-user-cog"></i></a>
+            <?php
+            if(isset($_SESSION['user']) && $_SESSION['user']->getRole() === 1){?>
+                <a id="adminButton" href="/index.php?ctrl=admin&action=admin"><i class="fas fa-user-cog"></i></a> <?php
+            }
+            ?>
+
         </div>
         <figure>
             <img src="/images/titre.png" width="100%" alt="Mundus Sine Nomimé">
@@ -64,9 +73,12 @@
             }
             ?>
         </nav>
-
         <div id="infoserv"></div>
-        <div id="connectServ"></div>
+        <?php
+        if(isset($_SESSION['user']) && $_SESSION['user']->getRole() !== 3) { ?>
+            <div id="connectServ"></div><?php
+        }
+        ?>
     </div>
 </div>
 

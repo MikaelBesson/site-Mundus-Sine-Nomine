@@ -5,7 +5,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/RoleManager.php';
 
 
-session_start();
 $conn = new DB();
 
 

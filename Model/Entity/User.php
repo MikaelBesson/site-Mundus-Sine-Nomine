@@ -14,9 +14,9 @@ class user {
     /**
      * user constructor.
      * @param int|null $id
-     * @param string $name
-     * @param string $password
-     * @param string $email
+     * @param string|null $name
+     * @param string|null $password
+     * @param string|null $email
      * @param int|null $role
      */
     public function __construct(int $id = null, string $name = null, string $password = null, string $email = null, int $role = null) {
