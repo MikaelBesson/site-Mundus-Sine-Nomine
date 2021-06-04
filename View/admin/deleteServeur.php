@@ -2,7 +2,7 @@
     <div id="imgLeft"></div>
     <div id="admin">
         <h4>Supprimer un serveur</h4><br>
-        <form action="" method="post">
+        <form action="/deleteServerFunction.php" method="post">
             <label for="delServ">Nom du serveur a supprimer</label><br>
             <input type="text" name="delServ" id="delServ"><br><br>
             <input type="submit" value="Envoyer">

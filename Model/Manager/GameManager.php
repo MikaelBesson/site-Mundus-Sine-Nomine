@@ -24,16 +24,21 @@ class GameManager {
     }
 
     /**
-     * return one game
+     * @param string $name
      * @return game
      */
-    public function getGame() {
+    public function getGame(string $name) :?game {
         $conn = new DB();
-        $req = $conn->connect()->prepare("SELECT * FROM game");
+        $req = $conn->connect()->prepare("SELECT * FROM game WHERE name = :name");
+        $req->bindValue(':name', $name);
         $req->execute();
         $data = $req->fetch();
-
-        return $game = new game($data['id'], $data['name'], $data['infogame_fk']);
+        if($data) {
+            return $game = new game($data['id'], $data['name'], $data['infogame_fk']);
+        }
+        else {
+            return null;
+        }
     }
 
     /**
@@ -57,12 +62,18 @@ class GameManager {
         $req->bindValue(':name', $name);
         $req->bindValue(':infogame_fk', $info->getId());
 
-        if($req->execute()) {
-            return "jeux ajouté avec succès";
+        try {
+            if($req->execute()) {
+                return "jeux ajouté avec succès";
+            }
+            else{
+                return 'erreur lors de l\'enregistrement';
+            }
         }
-        else{
-            return 'erreur lors de l\'enregistrement';
+        catch (PDOException $e){
+            return 'le jeux est deja present';
         }
+
     }
 
     /**
@@ -90,12 +101,23 @@ class GameManager {
      */
     public function deleteGame($gameId) {
         $conn = new DB();
-        $req = $conn->connect()->prepare("DELETE FROM game WHERE id = :id");
+        $req = $conn->connect()->prepare("SELECT infogame_fk FROM game WHERE id = :id");
         $req->bindValue(':id', $gameId);
-
         if ($req->execute()) {
-            echo 'jeux supprimer avec succès';
+            $fk = $req->fetch()['infogame_fk'];
+            $req = $conn->connect()->prepare("DELETE FROM infogame WHERE id = :id");
+            $req->bindValue(':id', $fk);
+            $req->execute();
+            $req = $conn->connect()->prepare("DELETE FROM game WHERE id = :id");
+            $req->bindValue(':id', $gameId);
+            return 'jeux supprimer avec succès';
         }
+        else {
+            return "erreur pendant la suppression";
+        }
+
+
+
     }
 
 }

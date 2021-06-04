@@ -24,6 +24,21 @@ class infoServManager {
         return $infos;
     }
 
+    public function getServ($name) {
+        $conn = new DB();
+        $req = $conn->connect()->prepare("SELECT * FROM infoserv WHERE serv_name = :name");
+        $req->bindValue(':name', $name);
+        $req->execute();
+        $data = $req->fetch();
+        if($data){
+            return $info = new infoServ($data['serv_name'],$data['ip'],$data['password'],$data['game_fk'],$data['id']);
+        }
+        else {
+            return null;
+        }
+
+    }
+
     public function getLastId(){
         $conn = new DB();
         $req = $conn->connect()->prepare("SELECT MAX(id) as id FROM infoserv");
@@ -77,7 +92,7 @@ class infoServManager {
         $req->bindValue(':password', $infoServ->getPassword());
 
         if($req->execute()){
-            echo 'info serveur modifié avec succes !!';
+            echo 'info serveur modifié avec succès !!';
         }
         else{
             echo "erreur pendant la modification";
@@ -94,7 +109,10 @@ class infoServManager {
         $req->bindValue(':id', $infoservId);
 
         if ($req->execute()) {
-            echo 'infos serveur supprimer avec succes';
+            return 'infos serveur supprimer avec succès';
+        }
+        else {
+            return 'erreur pendant la suppression du serveur';
         }
     }
 }

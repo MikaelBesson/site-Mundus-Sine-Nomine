@@ -5,9 +5,9 @@
  */
 class user {
     private ?int $id;
-    private string $name;
-    private string $password;
-    private string $email;
+    private ?string $name;
+    private ?string $password;
+    private ?string $email;
     private ?int $role;
 
 /* user constructor */
@@ -19,7 +19,7 @@ class user {
      * @param string $email
      * @param int|null $role
      */
-    public function __construct(int $id, string $name, string $password, string $email, int $role = null) {
+    public function __construct(int $id = null, string $name = null, string $password = null, string $email = null, int $role = null) {
         $this->id = $id;
         $this->name = $name;
         $this->password = $password;

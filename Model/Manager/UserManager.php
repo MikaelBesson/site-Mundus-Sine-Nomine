@@ -25,16 +25,17 @@ class UserManager {
 
     public function getUserByName($name) {
         $conn = new DB();
-        $user = [];
+        $user = new user();
         $req = $conn->connect()->prepare("SELECT * FROM user WHERE name = :name");
         $req->bindValue(':name', $name);
 
         $req->execute();
         $data = $req->fetch();
         if($data) {
-            $user = new user($data['id'], $data['name'], $data['password'], $data['email'], $data['role']);
+            $user = new user($data['id'], $data['name'], $data['password'], $data['email'], $data['role_fk']);
+            return $user;
         }
-        return $user;
+
     }
 
     /**
@@ -83,10 +84,10 @@ class UserManager {
         $req->bindValue(':id', $user->getId());
 
         if($req->execute()){
-            echo 'Utilisateur modifié avec succes !!';
+            return 'Utilisateur modifié avec succès !!';
         }
         else{
-            echo "erreur pendant la modification";
+            return "erreur pendant la modification";
         }
     }
 
@@ -94,13 +95,16 @@ class UserManager {
      * delette an user
      * @param $userId
      */
-    function deletteUser($userId) {
+    function deleteUser($userId) {
         $conn = new DB();
         $req = $conn->connect()->prepare("DELETE FROM user WHERE id = :id");
         $req->bindValue(':id', $userId);
 
         if ($req->execute()) {
-            echo 'utilisateur supprimer avec succes';
+            return 'utilisateur supprimer avec succès';
+        }
+        else{
+            return 'erreur pendant la modification';
         }
     }
 }
