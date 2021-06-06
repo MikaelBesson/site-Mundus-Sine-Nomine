@@ -37,15 +37,16 @@
             <div class="art1">
                 <span>
                     Survivantes,Survivants toi qui est fan de jeux de survie, de build, de dépassement de soi tu est ici au bon endroit<br><br>
-                    La communauté Mundus Sine Nominé a vue le jour il y as bien longtemps dans la tête de notre admin @elhios,<br>
-                    avec le temps des fidèles on rejoint son mouvement et la communauté autrefois appelez les survivants <br>
+                    La communauté Mundus Sine Nominé autrefois appelez les survivants <br>
                     c'est vue renaitre sous le nom de Mundus Sine Nominé (Le monde sans nom) <br><br>
                     Le staff ce compose d'une dizaine de personnes benevole et chaqu'un y trouve son role <br>
                     (admin discord, admin serveur, modos ou equipes de dev event)<br><br>
-                    tout ce petit monde communique au mieux pour satisfaire les demandes de nos nombreux membres<br>
+                    tout ce petit monde communique au mieux pour satisfaire les demandes de nos nombreux membres<br><br>
                     ( qui aujourd'hui depasse la barre des 1200) Mundus propose plusieurs serveurs ouvert gratuitement a nos membres <br>
                     et la possibilité de louer un espace pour ceux qui voudrait une partie avec des regles plus personelle<br>
                     ( ajout de mods, partie en commité restreint, test de certains jeux etc...).<br><br>
+                    Nous esperons que vous prendrez plaisir a jouez sur nos serveurs<br>
+                    survivalement votre !!<br><br>Mundus
                 </span>
             </div>
         </div>

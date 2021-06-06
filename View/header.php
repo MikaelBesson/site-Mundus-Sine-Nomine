@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/940412168c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/breakpoint.css">
     <title><?= $title ?></title>
 </head>
 <body>
