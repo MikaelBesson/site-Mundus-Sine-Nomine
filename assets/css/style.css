@@ -161,7 +161,7 @@ h3 {
 
 #serverlist {
     width: 100%;
-    font-size: large;
+    font-size: 13px;
     display: flex;
     justify-content: space-around;
 }
@@ -253,7 +253,6 @@ h3 {
 }
 
 .formContain h2 {
-
     text-align: center;
     padding-top: 2rem;
     color: black;
@@ -274,7 +273,7 @@ h3 {
 }
 
 .input {
-    width: 50%;
+    width: 40%;
 }
 
 .input #password {

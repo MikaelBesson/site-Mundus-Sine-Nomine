@@ -2,7 +2,7 @@
 <div id="adminBlock">
     <div id="imgLeft"></div>
         <div id="admin">
-            <h4>Administration bienvenue :</h4><br>
+            <h4>Administration bienvenue : <?= $_SESSION['user']->getName()?></h4><br>
             <form>
                 <span>Que voulez vous faire?</span><br><br>
                 <a href="/index.php?ctrl=admin&action=addGame">Ajoutez un jeux</a><br>

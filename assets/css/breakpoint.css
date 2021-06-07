@@ -2,12 +2,474 @@
 
 /* breakpoint responsive */
 
-@media screnn and (min-width: 1300px) {
 
+@media screen and (max-width: 1250px) {
+    /* acceuil */
+
+    .title {
+        font-size: 10px;
+    }
+    .intro {
+        margin-top: 20rem;
+    }
+    #slide1 {
+        height: 700px;
+    }
+    /* formulaire */
+
+    .form {
+        font-size:x-large;
+        margin: 1rem auto;
+    }
+    .label {
+        width: 50%;
+        margin-top:15px;
+
+    }
+    .input {
+        width: 40%;
+        margin-top: 5px;
+    }
+    .input #password {
+        margin-top: 0;
+    }
 }
 
-@media screnn and (min-width: 1120px) {
-/* changer le bouton admin*/
-    /*changer le  titre presentation*/
+@media screen and (max-width: 1200px) {
+    /* formulaire */
 
+    .form {
+        font-size:large;
+        margin: 1rem auto;
+    }
+    .label {
+        width: 50%;
+        margin-top:15px;
+
+    }
+    .input {
+        width: 40%;
+        margin-top: 5px;
+    }
+    .input #password {
+        margin-top: 0;
+    }
+    #connectServ {
+        font-size: x-large;
+        display: flex;
+        flex-direction: column;
+    }
+    #slide3 {
+        height: 1600px;
+    }
 }
+
+@media screen and (max-width: 1130px) {
+    /* acceuil */
+
+    #logDiscord {
+        margin-left: 20%;
+    }
+    .intro {
+        margin-top: 10rem;
+    }
+    #slide1 {
+        height: 600px;
+    }
+    h2 {
+        font-size: large;
+    }
+    .art1 {
+        font-size: large;
+    }
+    #slide2 {
+        height: 850px;
+    }
+    #serverlist {
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+        width:30%;
+    }
+    #infoserv {
+        min-height: 10rem;
+        font-size: large;
+    }
+    #slide3 {
+        height: 1600px;
+    }
+    #connectServ {
+        font-size: large;
+    }
+    /* formulaire */
+
+    .form {
+        font-size: large;
+        margin: 1rem auto;
+    }
+    .label {
+        width: 50%;
+        margin-top:15px;
+
+    }
+    .input {
+        width: 50%;
+        margin-top: 5px;
+    }
+    .input #password {
+        margin-top: 0;
+    }
+    #connectServ {
+        font-size: x-large;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    /* formulaire */
+
+    .form {
+        font-size: medium;
+        margin: 1rem auto;
+    }
+    .label {
+        width: 50%;
+        margin-top:10px;
+    }
+    .input {
+        width: 50%;
+        margin-top: 0;
+    }
+    .input #password {
+        margin-top: 0;
+    }
+    #connectServ {
+        font-size: large;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    /* acceuil */
+
+    .ml2 {
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+    .intro {
+        margin-top: 5rem;
+    }
+    #slide1 {
+        height: 600px;
+    }
+    h2 {
+        font-size: large;
+    }
+    .art1 {
+        font-size: large;
+    }
+    #slide2 {
+        height: 900px;
+    }
+    #serverlist {
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+        width:30%;
+    }
+    #infoserv {
+        min-height: 10rem;
+        font-size: medium;
+    }
+    #slide3 {
+        height: 1600px;
+    }
+    #connectServ {
+        font-size: medium;
+    }
+
+    /* formulaire */
+
+    .form {
+        font-size: medium;
+        margin: 1rem auto;
+    }
+    .label {
+        width: 50%;
+        margin-top:15px;
+        font-size: small;
+    }
+    .input {
+        width: 30%;
+        margin-top: 0;
+        font-size: small;
+    }
+    .input #password {
+        margin-top: 0;
+    }
+    .submit {
+        margin-top: 1rem;
+        padding: 5px;
+    }
+    #connectServ {
+        font-size: large;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    /* acceuil */
+
+    #logDiscord {
+        margin-left: 10%;
+    }
+    #slide1 {
+        height: 600px;
+    }
+    h2 {
+        font-size: large;
+    }
+    .art1 {
+        font-size: large;
+    }
+    #slide2 {
+        height: 900px;
+    }
+    #serverlist {
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+        width:40%;
+
+    }
+    #infoserv {
+        min-height: 10rem;
+        font-size: large;
+    }
+    #slide3 {
+        height: 1600px;
+    }
+    #connectServ {
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* formulaire */
+    .form {
+        width: 100%;
+    }
+    .label {
+        font-size: 10px;
+
+    }
+    .input #password, #pass, #name, #email {
+        width: 100%;
+        font-size: 10px;
+    }
+    #connectServ {
+        font-size: large;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    /* acceuil */
+
+    #logDiscord {
+        margin-left: 5%;
+        font-size: medium;
+    }
+    #userconnect {
+        font-size: medium;
+        margin-left: 10%;
+    }
+    #connect {
+        font-size: medium;
+        margin-left: 5%;
+    }
+    #adminButton {
+        font-size: medium;
+        margin-left: 5%;
+    }
+    .ml2 {
+        font-weight: 500;
+        font-size: 2rem;
+    }
+    .intro {
+        margin-top: 2rem;
+    }
+    #slide1 {
+        height: 600px;
+    }
+    h2 {
+        font-size: large;
+    }
+    .art1 {
+        font-size: medium;
+    }
+    #serverlist {
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+        width:50%;
+    }
+    #infoserv {
+        min-height: 10rem;
+        font-size: medium;
+    }
+    #slide3 {
+        height: 1600px;
+    }
+    #connectServ {
+        font-size: medium;
+    }
+    #connectServ {
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    /* acceuil */
+
+    #logDiscord {
+        margin-left: 1%;
+        font-size: small;
+    }
+    #userconnect {
+        font-size: small;
+        margin-left: 5%;
+    }
+    #connect {
+        font-size: small;
+        margin-left: 5%;
+    }
+    #adminButton {
+        font-size: small;
+        margin-left: 5%;
+    }
+    .ml2 {
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+    .intro {
+        font-size: large;
+    }
+    #slide1 {
+        height: 500px;
+    }
+    h2 {
+        font-size: medium;
+    }
+    .art1 {
+        font-size: small;
+    }
+    #slide2 {
+        height: 850px;
+    }
+    #serverlist {
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+        width:50%;
+    }
+    #infoserv {
+        min-height: 10rem;
+        font-size: small;
+    }
+    #slide3 {
+        height: 1600px;
+    }
+    #connectServ {
+        font-size: small;
+    }
+    #connectServ {
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+@media screen and (max-width: 340px) {
+    /* acceuil */
+
+    #logDiscord {
+        margin-left: 1%;
+        font-size: small;
+    }
+    #userconnect {
+        font-size: small;
+        margin-left: 2%;
+    }
+    #connect {
+        font-size: small;
+        margin-left: 2%;
+    }
+    #adminButton {
+        font-size: small;
+        margin-left: 2%;
+    }
+    .ml2 {
+        font-weight: 300;
+        font-size: 1rem;
+    }
+    .intro {
+        font-size: medium;
+    }
+    #slide1 {
+        height: 400px;
+    }
+    h2 {
+        font-size: medium;
+    }
+    .art1 {
+        font-size: small;
+    }
+    #slide2 {
+        height: 850px;
+    }
+    #serverlist {
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+       width:100%;
+    }
+    #infoserv {
+        min-height: 10rem;
+        font-size: small;
+    }
+    #slide3 {
+        height: 1600px;
+    }
+    #connectServ {
+        font-size: small;
+        display: flex;
+        flex-direction: column;
+    }
+}
+

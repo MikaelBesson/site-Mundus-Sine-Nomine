@@ -23,7 +23,7 @@ if (isset($_POST,$_POST['name'], $_POST['password'], $_POST['email'])) {
             </div>
             <div class="subMessage">
                 <div class="submit">
-                    <input type="submit" value="Se connecter">
+                    <input id="submitConnect" type="submit" value="Se connecter">
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@ if (isset($_POST,$_POST['name'], $_POST['password'], $_POST['email'])) {
             </div>
             <div class="subMessage">
                 <div class="submit">
-                    <input type="submit" name="submit" value="validez l'inscription" title="Allez viend on est bien !!">
+                    <input id="submitRegister" type="submit" name="submit" value="validez l'inscription" title="Allez viend on est bien !!">
                 </div>
                 <div class="messageBot">
                     <?php

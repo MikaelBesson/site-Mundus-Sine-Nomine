@@ -55,7 +55,7 @@ for(let i = 0; i< titles.length; i++) {
                         <div>Info Serveur :
                         <div>Nom du serveur :<br> ${message2.serv_name}</div>
                         <div>Ip du serveur :<br> ${message2.ip}</div>
-                        <div>Password du serveur :<br> ${message2.password}</div>
+                        <div>Password du serveur :<br> ${message2.password}</div><br><br>
                 </div>
                     `
                 }).join('');
