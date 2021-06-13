@@ -15,7 +15,7 @@
             <label for="servName">Nom du serveur a ajoutez</label><br>
             <input type="text" name="servName" id="servName"><br>
             <label for="IpAdress">Adresse IP du serveur</label><br>
-            <input type="number" name="IpAdress" id="IpAdress"><br>
+            <input type="text" name="IpAdress" id="IpAdress"><br>
             <label for="servPass">Mot de passe du serveur</label><br>
             <input type="text" name="servPass" id="servPass"><br><br>
             <input type="submit" value="Envoyer">

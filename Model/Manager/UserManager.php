@@ -74,7 +74,7 @@ class UserManager {
         $name = $verif->verifInput($data['name']);
         $password = $verif->verifInput($data['password']);
         $email = $verif->verifInput($data['email']);
-        $role_fk = 3;
+        $role_fk = 2;
 
         $req = $conn->connect()->prepare("INSERT INTO user(name, password, email, role_fk)
                                                 VALUES (:name, :password, :email, :role_fk)");
