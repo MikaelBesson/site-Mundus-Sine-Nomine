@@ -13,7 +13,7 @@ class cleanInput {
         $data = trim($data);
         //remove backslashes
         $data = stripslashes($data);
-        //transform special characters into HTML
+        //transform HTML into special characters
         $data = htmlspecialchars($data);
         //add slashes to avoid strings character in forms
         $data = addslashes($data);

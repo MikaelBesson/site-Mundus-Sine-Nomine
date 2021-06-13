@@ -37,7 +37,7 @@ for(let i = 0; i< titles.length; i++) {
             const resultHTML = result.reverse().map(function (message) {
                 return `
                     <div>Nom : ${message.name}</div>
-                    <div>Devellopeur : ${message.dev}</div>
+                    <div>Developpeur : ${message.dev}</div>
                     <div>Genre : ${message.genre}</div>
                     <br>
                     <div id="description">Description :<br>${message.content}</div>
