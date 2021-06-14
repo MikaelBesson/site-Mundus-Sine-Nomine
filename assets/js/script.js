@@ -36,9 +36,9 @@ for(let i = 0; i< titles.length; i++) {
             const result = JSON.parse(xhr.responseText);
             const resultHTML = result.reverse().map(function (message) {
                 return `
-                    <div>Nom : ${message.name}</div>
-                    <div>Developpeur : ${message.dev}</div>
-                    <div>Genre : ${message.genre}</div>
+                    <div><b>Nom</b> : ${message.name}</div>
+                    <div><b>Developpeur</b> : ${message.dev}</div>
+                    <div><b>Genre</b> : ${message.genre}</div>
                     <br>
                     <div id="description">Description :<br>${message.content}</div>
                 `
@@ -52,10 +52,10 @@ for(let i = 0; i< titles.length; i++) {
                 const result2 = JSON.parse(xhr2.responseText);
                 const resultHTML2 = result2.map(function (message2) {
                     return `
-                        <div>Info Serveur :
-                        <div>Nom du serveur :<br> ${message2.serv_name}</div>
-                        <div>Ip du serveur :<br> ${message2.ip}</div>
-                        <div>Password du serveur :<br> ${message2.password}</div><br><br>
+                        <div><b>Info Serveur</b> :
+                        <div><b>Nom du serveur</b> :<br> ${message2.serv_name}</div>
+                        <div><b>Ip du serveur</b> :<br> ${message2.ip}</div>
+                        <div><b>Password du serveur</b> :<br> ${message2.password}</div><br><br>
                 </div>
                     `
                 }).join('');
