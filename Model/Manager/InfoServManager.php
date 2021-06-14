@@ -67,7 +67,7 @@ class infoServManager {
                                                 VALUES (:serv_name, :ip, :password, :game)");
 
         $req->bindValue('serv_name', $serv_name);
-        $req->bindValue(':ip', intval($ip));
+        $req->bindValue(':ip', $ip);
         $req->bindValue(':password', $password);
         $req->bindValue(':game', intval($gameId));
 
